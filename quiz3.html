@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DSA Quiz</title>
+  <link rel="stylesheet" href="quiztest.css">
+  
+</head>
+
+    <body>
+      <script>
+        function show(shown, hidden) {
+          document.getElementById(shown).style.display='block';
+          document.getElementById(hidden).style.display='none';
+          return false;
+        }
+        </script>
+      
+      <div id="Page1">
+        <h1>Instructions</h1>
+        <p>1. There are 5 questions,each carry 10 marks.<br>2. There is no negative marking.<br>3. only single option can be opted.</p>
+        <button><a href="#" onclick="return show('page2','Page1');">start quiz</a></button>
+      </div>
+  <div class="container" id="page2" style="display: none;">
+    <h1>DSA Quiz</h1>
+    <div id="quiz"></div>
+    <div id="result" class="result"></div>
+    <button id="submit" class="button">Submit</button>
+    <button id="retry" class="button hide">Retry</button>
+    <button id="showAnswer" class="button hide">Show Answer</button>
+  </div>
+  <script src="script2.js"></script>
+</body>
+</html>
