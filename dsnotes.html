@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS notes</title>
+</head>
+<body>
+    <h1 style="text-align: center;">DS NOTES</h1>
+    <pre>
+1. STACK OPERATIONS
+
+#include<stdio.h>
+#include<stdlib.h>
+#define n 20
+int stack[n],top=-1;
+void push(int item){
+    if(top == n-1){
+    printf("stack is overflow");
+    return;
+    }
+    stack[++top]=item;
+}
+void pop(){
+    if(top == -1)
+    printf("stack is underflow");
+    else{
+        printf("%d\n",stack[top]);
+        top=top-1;
+    }
+}
+void peek(){
+     if(top==-1){
+        printf("Stack is underflow");
+        return;
+    }
+    printf("top most element is %d",stack[top]);
+}
+void display(){
+    if(top==-1){
+        printf("Stack is underflow");
+        return;
+    }
+    for(int i=0;i<=top;i++){
+        printf("%d",stack[i]);
+    }
+
+}
+int main(){
+    int item,choice;
+    while(1){
+        scanf("%d",&choice);
+        switch(choice){
+            case 1 : printf("Enter the element to push : ");
+                     scanf("%d",&item);
+                     push(item);
+                     break;
+            case 2 : pop();
+                     break;
+            case 3 : peek();
+                     break;
+            case 4 : display();
+                     break;
+            case 5 : exit(1);
+            default : printf("Enter a valid choice\n");
+    }
+    }
+    }
+    </pre>
+    <hr>
+    <pre>
+2.  INFIX TO POSTFIX
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#define n 20
+int top = -1;
+char stack[n],infix[n],postfix[n];
+void push(char symbol){
+    if(top == n-1){
+    printf("Stack is overflow");
+    exit(1);}
+    else{
+        stack[++top] = symbol;
+    }
+}
+int pop(){
+    if(top == -1){
+        printf("Stack is underflow");
+        exit(1);
+    }
+    else{
+        char r = stack[top];
+        top--;
+        return r;
+    }
+}
+int priority(char symbol){
+    switch (symbol){
+        case '(' :return 0;
+        case '+':
+        case '-': return 1;
+        case '*':
+        case '/':
+        case '%':return 2;
+        case '^':return 3;
+    }
+}
+int isempty(){
+    if(top == -1){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+void infixtopostfix(char a[]){
+    int p=0,i;
+    char next,symbol;
+    for(i=0;i<strlen(infix);i++){
+        symbol = infix[i];
+        switch(symbol){
+            case '(' : push(symbol);
+                        break;
+            case ')' : while((next=pop()) != '(' ){
+                        postfix[p++]=next;}
+                        break;
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+            case '%':
+            case '^':
+                    while(isempty()==0 && (priority(stack[top])>=priority(symbol))){
+                        postfix[p++]=pop();
+                    }
+                    push(symbol);
+                    break;
+            default : postfix[p++]=symbol;
+        }
+    }
+    while(isempty()==0)
+        postfix[p++]=pop();
+    postfix[p]='\0';
+}
+int main(){
+ gets(infix);
+ infixtopostfix(infix);
+ puts(postfix);
+}
+    </pre>
+<hr>
+<pre>
+3.  CIRCULAR QUEUE
+
+#include<stdio.h>
+#include<stdlib.h>
+#define max 5
+int front = -1,rear =-1,queue[max];
+
+void insert(int item){
+   if((front ==0 && rear == max-1) || (front ==rear+1)){
+    printf("queue is full\n");
+    return;
+   }
+   else if(rear==max-1 ){
+    rear = 0;
+   }
+   else{
+    if(front==-1){
+        front=0;
+    }
+    rear = rear + 1;}
+    queue[rear]=item;
+}
+
+void delete(){
+    if((front==-1 && rear ==-1) || (front ==rear+1)){
+        printf("queue is empty\n");
+        return;
+    }
+    else if(front == rear){
+        printf("Deleted element is %d ",queue[front]);
+        front=rear=-1;
+    }
+    else{
+        if(front == max-1){
+        printf("Deleted element is %d ",queue[front]);
+            front = 0;
+        }
+        else{
+        printf("Deleted element is %d ",queue[front]);
+        front = front+1;
+    }  }
+}
+
+void peek(){
+    if((front==-1 && rear ==-1) || (front ==rear+1)){
+        printf("queue is empty\n");
+        return;
+    }
+    else{
+        printf("top most element is %d ",queue[front]);
+    }
+   
+}
+void display(){
+    if((front==-1 && rear ==-1) || (front ==rear+1)){
+        printf("queue is empty\n");
+        return;
+    }
+    else if(front <= rear){
+        for(int i=front;i<=rear;i++){
+            printf("%d ",queue[i]);}
+    }
+    else if(front>rear){
+        for(int i=front;i<=max-1;i++){
+         printf("%d ",queue[i]);
+
+        }
+        for(int i=0;i<=rear;i++){
+            printf("%d ",queue[i]);
+
+        }
+    }
+}
+int main(){
+    int choice,item;
+    printf("Queue operations : \n1.insert\n2.delete\n3.peek\n4.display\n5.exit\n");
+     while(1){
+        printf("Enter your choice : \n");
+        scanf("%d",&choice);
+        switch(choice){
+            case 1 : printf("Enter an element to insert : ");
+                    scanf("%d",&item);
+                     insert(item);
+                     break;
+            case 2 : delete();
+                     break;
+            case 3 : peek();
+                     break;
+            case 4 : display();
+                     break;
+            case 5 : exit(1);
+            default : printf("Enter a valid choice : ");
+    }
+    }
+}
+</pre>
+<hr>
+<pre>
+4.   SINGLE LINKED LIST
+
+#include<stdio.h>
+#include<stdlib.h>
+int choice;
+struct node{
+    int info;
+    struct node *link;
+};
+struct node *start,*temp,*p;
+
+struct node* insertatbegin(){
+
+temp = malloc(sizeof(struct node));
+int data;
+printf("Enter data");
+scanf("%d",&data);
+temp->info=data;
+temp->link=start;
+start = temp;
+return start;
+}
+
+struct node *insertinbetween(){
+temp=start;
+int pos,data;
+  printf("Enter position: ");
+  scanf("%d", &pos);
+  printf("Enter data: ");
+  scanf("%d", &data);
+
+while(temp->info != pos){
+    temp=temp->link;
+ }
+p =malloc(sizeof(struct node));
+ p->link=temp->link;
+ temp->link=p;
+ p->info=data;
+}
+
+
+struct node *insertatend(){
+    p= (struct node*)malloc(sizeof(struct node));
+    int data;
+    scanf("%d",&data);
+    p->info=data;
+    p->link=NULL;
+    temp=start;
+
+    while(temp->link !=NULL){
+        temp=temp->link;
+    }
+    temp->link=p;
+     printf("Data is entered.\n");
+}
+
+struct node *display(){
+    temp=start;
+    while(temp!=NULL){
+        printf("%d\n",temp->info);
+        temp=temp->link;
+    }
+
+}
+
+int main()
+{
+  struct node * start = malloc(sizeof(struct node));
+  start->link = NULL;
+
+  printf("Operations are:\n1. Insert at the beginning\n2. Insert at the end\n3. Insert at random position\n4. Display\n");
+
+  while (1)
+  {
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+
+    switch (choice)
+    {
+    case 1:
+     insertatbegin();
+      break;
+    case 2:
+      insertatend();
+      break;
+    case 3:
+      insertinbetween();
+      break;
+    case 4:
+      display();
+      break;
+    default:
+      printf("Invalid choice. Please enter a valid option.\n");
+    }
+  }
+
+ return 0;
+}
+</pre>
+<hr>
+<pre>
+5.  SEPARATE CHAINING
+
+#include<stdio.h>
+#include<stdlib.h>
+#define max 5
+int item;
+
+struct node {
+    int info;
+    struct node*link;
+};
+struct node *arr[max];
+void insert(int item){
+    struct node temp=(struct node)malloc(sizeof(struct node));
+    if(temp==NULL){
+        printf("memory not allocated");
+    }
+    temp->info=item;
+    temp->link=NULL;
+    int k=item%max;
+    if(arr[k]==NULL){
+        arr[k]=temp;
+    }
+    else{
+        struct node *start=arr[k];
+
+        while(start->link){
+            start=start->link;
+        }
+        start->link=temp;
+    }
+}
+void print(){
+    for(int i = 0; i max; i++)
+    {
+        struct node *temp = arr[i];
+        printf("%d - ",i);
+        while(temp){
+            printf("%d -->",temp->info);
+            temp = temp->link;
+        }
+        printf("NULL\n");
+    }
+}
+
+int main(){
+    int i;
+    for( i=0;imax;i++){
+       arr[i]=NULL;
+    }
+    printf("Enter the elements");
+    for(i=0;imax;i++){
+        scanf("%d",&item);
+        insert(item);
+    }   
+    print();
+}
+</pre>
+</body>
+</html>

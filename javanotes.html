@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java notes</title>
+</head>
+<style>
+    pre{
+        font-size: large;
+        font-weight: 700;
+    }
+</style>
+<body>
+    <h1 style="text-align: center;">JAVA NOTES</h1>
+    <pre>
+   1.   class ReservationSystem {
+        private int availableSeats = 10;
+    
+        public synchronized void reserve(String personName, int requestedSeats) {
+            System.out.println(personName + " entered.");
+            System.out.println("Available seats: " + availableSeats + " Requested seats: " + requestedSeats);
+    
+            if (availableSeats >= requestedSeats) {
+                System.out.println("Seat Available. Reserve now :-)");
+                availableSeats -= requestedSeats;
+                System.out.println(requestedSeats + " seats reserved.");
+            } else {
+                System.out.println("Requested seats not available :-(");
+            }
+    
+            System.out.println(personName + " leaving.");
+            System.out.println("----------------------------------------------");
+        }
+    }
+    
+    class PersonThread extends Thread {
+        private String personName;
+        private int requestedSeats;
+        private ReservationSystem reservationSystem;
+    
+        public PersonThread(String personName, int requestedSeats, ReservationSystem reservationSystem) {
+            this.personName = personName;
+            this.requestedSeats = requestedSeats;
+            this.reservationSystem = reservationSystem;
+        }
+    
+        @Override
+        public void run() {
+            reservationSystem.reserve(personName, requestedSeats);
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            ReservationSystem reservationSystem = new ReservationSystem();
+    
+            // Create multiple person threads
+            PersonThread person1 = new PersonThread("Person-1", 5, reservationSystem);
+            PersonThread person2 = new PersonThread("Person-2", 2, reservationSystem);
+            PersonThread person3 = new PersonThread("Person-3", 4, reservationSystem);
+    
+            // Start the threads
+            person1.start();
+            person2.start();
+            person3.start();
+        }
+    }
+    </pre>
+    <hr>
+    <pre>
+2. import java.util.*;
+    class Farm
+    {
+        String x,y,z;
+        Farm(String x,String y,String z)
+        {
+            this.x=x;
+            this.y=y;
+            this.z=z;
+            System.out.println("Sound:"+x+" Stay:"+y+" Eat:"+z);
+    }
+}
+    class Cow extends Farm
+    {
+        Cow(String x,String y,String z)
+        {
+            super(x,y,z);
+        }
+    }
+    class Pig extends Farm
+    {
+        Pig(String x,String y,String z)
+        {
+            super(x,y,z);
+        }
+    }
+    class Horse extends Farm
+    {
+        Horse(String x,String y,String z)
+        {
+            super(x,y,z);
+        }
+    }
+class Main 
+{
+    public static void main(String[] args) 
+    {
+       Scanner sc=new Scanner(System.in);
+       String a1=sc.nextLine();
+       String b1=sc.nextLine();
+       String c1=sc.nextLine();
+       System.out.println("Cow details:");
+       Cow c=new Cow(a1,b1,c1);
+       String a2=sc.nextLine();
+       String b2=sc.nextLine();
+       String c2=sc.nextLine();
+       System.out.println("Pig details:");
+       Pig p=new Pig(a2,b2,c2);
+       String a3=sc.nextLine();
+       String b3=sc.nextLine();
+       String c3=sc.nextLine();
+       System.out.println("House details:");
+       Horse h=new Horse(a3,b3,c3);
+    }
+}
+    </pre>
+<hr>
+<pre>
+3. import java.util.*;
+class Mobile extends Exception
+{
+   public Mobile(int n) 
+   {
+       System.out.print("Invalid Mobile Number-");
+       if(n==1)
+          System.out.println("NumberFormatException");
+       else if(n==2)
+          System.out.println("ArrayIndexOutofBoundException");
+       else 
+          System.out.println("LengthNotSufficientexception");
+   }
+}
+class HelloWorld 
+{
+   public static void main(String[] args) 
+   {
+      Scanner sc=new Scanner(System.in);
+      String num=sc.nextLine();
+      int n=num.length(),c=0,p=0;
+      for(int i=0;i<n;i++)
+      {
+          if(num.charAt(i)>=48&&num.charAt(i)<=57)
+             continue;
+          else
+          {
+              c=1;
+              break;
+          }
+      }
+          if(n>10&&c!=1)
+          {
+              p=1;
+              try{
+                  throw new Mobile(2);
+              }
+              catch(Exception e){
+              }
+          }
+          else if(n<10&&c!=1)
+          {
+              p=1;
+              try{
+                  throw new Mobile(3);
+              }
+              catch(Exception e){
+              }
+          }
+          else
+          {
+              if(n!=10)
+              {
+              p=1;
+              try{
+                  throw new Mobile(1);
+              }
+              catch(Exception e){
+              }
+              }
+          }
+          if(p==0)
+             System.out.println("Valid number");
+   }
+}
+</pre>
+<hr>
+<pre>
+4. import java.io.File;
+import java.io.FileInputStream;
+class Lab10
+{
+  public static void main(String arg[]) throws Exception
+  {
+    int pe=0,pi=0;
+    File f=new File("Sample.txt");
+    FileInputStream fis=new FileInputStream(f);
+    byte[] bytesArray=new byte[(int)f.length()];
+    fis.read(bytesArray);
+    String s=new String(bytesArray);
+    String[] data=s.split(" ");
+    for(int i=0;idata.length;i++)
+    {
+      String sp=data[i];
+      for(int j=1;jsp.length();j++)
+      {
+        if(sp.substring(j-1,j+1).equals("pe")||sp.substring(j-1,j+1).equals("Pe"))
+           pe++;
+        else if(sp.substring(j-1,j+1).equals("pi")||sp.substring(j-1,j+1).equals("Pi"))
+           pi++;
+        else
+           continue;
+      }
+    }
+    System.out.println("\"pe\"-no of occurences-"+String.valueOf(pe));
+    System.out.println("\"pi\"-no of occurences-"+String.valueOf(pi));
+  }
+}
+</pre>
+<hr>
+<pre>
+5. import java.util.*;
+class Parentheses
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String st=sc.nextLine();
+        Stack<Character> ch=new Stack<Character>();
+        for(int i=0;ist.length();i++)
+        {
+           if(st.isEmpty())
+              ch.push(st.charAt(i));
+           else
+           {
+              if(st.charAt(i)==')')
+              {
+                 if(ch.peek()=='(')
+                    ch.pop();
+                  else
+                    ch.push(st.charAt(i));
+               }
+               else if(st.charAt(i)=='}')
+               {
+                  if(ch.peek()=='{')
+                     ch.pop();
+                  else
+                     ch.push(st.charAt(i));
+               }
+               else if(st.charAt(i)==']')
+               {
+                  if(ch.peek()=='[')
+                     ch.pop();
+                  else
+                     ch.push(st.charAt(i));
+               }
+               else
+               ch.push(st.charAt(i));  
+         }
+         }
+         if(ch.isEmpty())
+            System.out.println("Valid");
+         else
+            System.out.println("Invalid");
+    }
+}
+</pre>
+</body>
+</html>
