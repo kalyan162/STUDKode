@@ -5,6 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDKode</title>
     <style>
+         /* @media screen and (min-width : 680){
+            
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+           
+        }
+
+        header {
+            background-color: black;
+            color: #ffffff;
+            padding: 30px;
+            text-align: left;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #1c1c1c;
+        }
+
+        nav li {
+            padding: 10px;
+            float: left;
+            font-size: x-large;
+        }
+
+        nav a {
+            display: block;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover{
+            background-color: #006f00;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #000000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #ffffff;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        p{
+            
+            color: white;
+            font-weight: 700;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #888;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f4f4f4;
+        }
+        .btn1{
+            margin-left: 20px;
+            background-color: rgb(0, 0, 0);
+            color:#ffffff;
+            padding: 2px;
+            border: inherit;
+            width: 3cm;
+            height: 25px;
+            font-size:larger;
+            font-weight: 700;
+        }
+        .btn1:hover{
+            background-color: #006f00;
+        }
+        section ul li{
+            display: flex;
+            padding: 10px;
+        }
+
+        .note{
+            text-decoration: none;
+            font-weight: 600;
+            font-size: large;
+            color: white;
+            padding: 10px;
+        }
+        .note:hover{
+            background-color: #006f00;
+        }
+        } */ 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -102,21 +210,43 @@
             display: flex;
             padding: 10px;
         }
+
+        .note{
+            text-decoration: none;
+            font-weight: 600;
+            font-size: large;
+            color: white;
+            padding: 10px;
+        }
+        .note:hover{
+            background-color: #006f00;
+        }
+        .logo{
+            width: 200px;
+            height: 300px;
+            float: left;
+        }
+        .title{
+            width: 750px;
+            height: 300px;
+        }
     </style>
 </head>
 <body>
 
 <header>
    <div >
-    <img src="logo.png" style="width: 200px;height: 300px;float: left;">
-    <img src="IMG_8295.JPG" style="width: 750px;height: 300px;">
+    <img class="logo" src="logo.png">
+    <img class="title" src="IMG_8295.JPG">
 </div>    
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#Quizes">Quizes</a></li>
+            <li><a href="#notes">Notes</a></li>
             <li><a href="#contact">Contact</a></li>
+          
         </ul>
     </nav>
 </header>
@@ -161,15 +291,22 @@ Join us on our Quiz Website and embark on a journey of continuous learning and e
     <li><form action="quiz1.html" method="get" target="_blank">
  <button type="submit" class="btn1">Java Quiz</button>
 </form></li>
-<li><form action="quiz2.html" method="get" target="_blank">
+<!-- <li><form action="quiz2.html" method="get" target="_blank">
     <button type="submit" class="btn1">C Quiz</button>
-   </form></li>      
+   </form></li> -->
    <li><form action="quiz3.html" method="get" target="_blank">
     <button type="submit" class="btn1">DSA Quiz</button>
    </form></li>
         <!-- Add more services here -->
     </ul>
     <!-- Add more content or features here -->
+</section>
+<section id="notes">
+    <h1 style="color: white;">NOTES</h1><br>
+    <a class="note" href="/javanotes.html">JAVA NOTES</a>
+    <br>
+    <br>
+    <a class="note"  href="/DSnotes.html">DS NOTES</a>
 </section>
 
 <section id="contact">
