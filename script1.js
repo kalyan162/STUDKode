@@ -1,4 +1,5 @@
-const quizData = [
+ const quizData = 
+ [
   {
     question: "What is the main purpose of Java Virtual Machine (JVM)?",
     options: [
@@ -48,9 +49,8 @@ const quizData = [
         "It allows a method to be declared in multiple classes"
     ],
     correctAnswer: "It allows a method to have multiple implementations with different parameter types or numbers"
-},
+}
   ];
-  
   const quizContainer = document.getElementById('quiz');
   const resultContainer = document.getElementById('result');
   const submitButton = document.getElementById('submit');
@@ -104,13 +104,13 @@ const quizData = [
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
     if (selectedOption) {
       const answer = selectedOption.value;
-      if (answer === quizData[currentQuestion].answer) {
+      if (answer === quizData[currentQuestion].correctAnswer) {
         score++;
       } else {
         incorrectAnswers.push({
           question: quizData[currentQuestion].question,
           incorrectAnswer: answer,
-          correctAnswer: quizData[currentQuestion].answer,
+          correctAnswer: quizData[currentQuestion].correctAnswer,
         });
       }
       currentQuestion++;
@@ -162,8 +162,8 @@ const quizData = [
   
     resultContainer.innerHTML = `
       <p>You scored ${score} out of ${quizData.length}!</p>
-      <p>Incorrect Answers:</p>
-      ${incorrectAnswersHtml}
+      <p>Incorrect Answers:
+      ${incorrectAnswersHtml}</p>
     `;
   }
   
