@@ -100,7 +100,7 @@ correctAnswer: "Array allows sequential access, Linked List allows random access
         incorrectAnswers.push({
           question: quizData[currentQuestion].question,
           incorrectAnswer: answer,
-          correctAnswer: quizData[currentQuestion].answer,
+          correctAnswer: quizData[currentQuestion].correctAnswer,
         });
       }
       currentQuestion++;
