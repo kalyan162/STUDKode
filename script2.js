@@ -4,14 +4,14 @@ options : ["Efficient for random access",
         "Efficient for sequential access",
         "Used for sorting elements",
         "Used for fast search operations"],
-correctanswer: " Efficient for sequential access"
+correctAnswer: " Efficient for sequential access"
   },
 {question:"What is a Stack?",
 options:["Linear data structure with FIFO access",
 "Linear data structure with LIFO access",
 "Non-linear data structure",
 "Data structure used for random access",],
-correctanswer: " Linear data structure with LIFO access",
+correctAnswer: " Linear data structure with LIFO access",
 },
 {
 question:"Time complexity of Binary Search:",
@@ -20,7 +20,7 @@ options:[
 "O(log n)",
 "O(n^2)",
 "O(1)"],
-correctanswer: "O(log n)",
+correctAnswer: "O(log n)",
 },
 {question:"Purpose of a Queue:",
 options:[
@@ -28,7 +28,7 @@ options:[
 "Store elements in sorted order",
 "Store elements with LIFO order",
 "Store elements with FIFO order"],
-correctanswer: "Store elements with FIFO order",
+correctAnswer: "Store elements with FIFO order",
 },
 {question:"Difference between Array and Linked List:",
 options:[
@@ -36,7 +36,7 @@ options:[
 "Array allows sequential access, Linked List allows random access",
 "Array has constant-time insertion and deletion, Linked List does not",
 "There is no difference"],
-correctanswer: "Array allows sequential access, Linked List allows random access",
+correctAnswer: "Array allows sequential access, Linked List allows random access",
 },
     
 ];
@@ -94,7 +94,7 @@ correctanswer: "Array allows sequential access, Linked List allows random access
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
     if (selectedOption) {
       const answer = selectedOption.value;
-      if (answer === quizData[currentQuestion].correctanswer) {
+      if (answer === quizData[currentQuestion].correctAnswer) {
         score++;
       } else {
         incorrectAnswers.push({
