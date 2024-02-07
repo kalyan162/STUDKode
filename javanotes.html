@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java notes</title>
 </head>
-<style>
-    pre{
-        font-size: large;
+<style> body{
+        background-color: antiquewhite;
+        color: black;
+        font-size: larger;
         font-weight: 700;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    pre{
+        border: 2px solid black;
     }
 </style>
 <body>
@@ -273,6 +278,729 @@ class Parentheses
             System.out.println("Invalid");
     }
 }
+</pre>
+
+<pre>
+    INTRODUCTION TO JAVA                           
+        What is Java?
+                • Java is a high-level, robust, and object-oriented
+                programming language that was initially developed by
+                Sun Microsystems (now a subsidiary of Oracle) in 1995.
+                • It follows the principle of WORA (Write Once Run
+                Anywhere)
+                – you can run a java program as many times as you want on a Java
+                supported platform after it is compiled. There is no need for
+                recompilation.
+                • A platform is any hardware or software environment
+                where you can run your programs. Java is known as a
+                platform because it has a runtime environment (JRE) and
+                API.
+                • First ever usage of Java in an embedded system : Link
+                History of Java
+                • 1991: Java was first designed for the digital cable
+                television industry
+                • It was initially known as the Green Team. It was designed
+                by James Gosling and his team members, Mike Sheridan
+                and Patrick Naughton
+                • Later it got renamed to Oak based on the Oaktree outside
+                James Gosling‟s Office
+                • 1995: Oak got changed to Java based on the island in
+                Indonesia from which the team used to have coffee
+                • Java was included in Time magazine‟s “Top Ten Best
+                Product of 1995”
+                • 1996: JDK 1.0 got released.
+</pre>
+<pre>
+Introduction to OOP:
+             The major motivating factor in the invention of object-oriented approach is to remove
+            drawbacks of procedural oriented approach.
+             OOP treats data as critical element in the program development and does not allow it
+            freely to flow around the system or application or program.
+             OOP combines the data and methods(functions) into a single unit this process is called
+            encapsulation.
+             The organisation of data and Methods(functions) in object-oriented programming is
+            shown in the following diagram.
+             OOP allows divide a problem into a no of entities called as objects and then build data
+            and Methods(functions) around these objects.
+             The data of an object can be accessed only by the method(function) associated with that
+            object.
+             In OOP, method(function) of one object can access the method(function) of other objects.
+            Disadvantage of Conventional Programming:
+             Traditional programming languages such as COBOL, FORTRAN, C etc. are commonly
+            known as procedure-oriented languages and also called as Conventional Languages.
+             The program written in these languages consists of a sequence of instructions that tells the
+            compiler or interpreter to perform a given task.
+             When a program code is large, it becomes inconvenient to manage and debug. To overcome
+            this problem, it is divided into smaller functions the carryout some specific task.
+             Each function can call another function during the execution.
+             As the functions are executing, they may access same data, and modify the data which in
+            turn effects the entire task.
+             Most of the functions are allowed to access the global data.
+            Disadvantages:
+            1. Large programs are divided into smaller programs known as functions. These functions can
+            call one another. Hence security is not provided.
+            2. No importance is given to security of data and importance is given to doing things.
+            3. Data move openly around the system from function to function.
+            4. Most functions accesses global data, what happens to the data is not known.
+            Basic Concepts (Key Concepts) / principles / features of Object-Oriented Programming:
+            Object-Oriented Programming is a methodology or paradigm to design a program using
+            classes and objects.
+            It simplifies the software development and maintenance by providing some concepts like:
+             Class
+             Object
+             Encapsulation & Data hiding
+             Inheritance
+             Polymorphism
+             Abstraction
+             Message Passing
+            Class:
+            Class is an abstract data type (user defined data type) / non-primitive data type that contains
+            attributes and methods that operate on data. It starts with the keyword class.
+            (or)
+            Class is a blueprint or template for creating an object.
+            e.g.: public class Student
+            {
+            String name;
+            int id;
+            public void readData()
+            {
+            }
+            public void displayData ()
+            {
+            }
+            };
+            Object:
+            An object is an instance of a class. It is a variable that represents attributes as well as methods
+            required for operating on the data. They interact with private data and methods through public
+            methods.
+            (or)
+            An object is an entity that exists physically in the real world which requires some memory will
+            be called as an object.
+            An object consists of:
+            State: It is represented by attributes / properties of an object.
+            Behaviour: It is represented by actions / methods of an object.
+            e.g.: Student s1 = new Student ();
+             Student s2 = new Student ();
+            In the above example Student is the class name and s1 and s2 are objects of that class.
+            e.g.: Class Object
+            Fruit Apple, Banana, Grape
+            Animal Lion, Tiger, Elephant
+            Mobile Apple, Samsung, Redmi, Realme
+            Laptop Dell, HP, Lenovo, Mi
+            Encapsulation & Data hiding:
+            Encapsulation:
+            Encapsulation is the process of combining data and methods into a single unit is called as
+            encapsulation.
+            Data Hiding:
+            Data hiding means hiding the internal data within the class to prevent its direct access from
+            outside the class. It is achieved by using an access modifier - a private modifier.
+            i.e., Private data and methods are available to the public methods only. They cannot be accessed
+            by the other part of the program. This process of hiding private data and methods from the other
+            part of the program is called as data hiding
+            Note: The recommended modifier for data members is private. The main advantage of data
+            hiding is security
+            Example 1: capsule, it is wrapped with different medicines.
+            Example 2:
+            class Account {
+            private double account_balance;
+            ……..
+            …….
+            }
+            Inheritance:
+             It is a process of using the properties of one class inside other class is known as inheritance.
+             The main aim of Inheritance is Reusability of the data and methods i.e. data and methods
+            declared in one class can be accessed by other class.
+             In Inheritance, two classes are involved (super class/base class/parent class and sub
+            class/derived class/child class).
+             The class which gives the properties is called as super class / base class / parent class.
+             The class which takes the properties and methods is called as sub-class/derived class /child
+            class.
+            Reusability: Using the already existing code is called as reusability. This is mostly used in
+            inheritance. The already existing code is inherited to the new class. It saves a lot of time and
+            effort. It also reduces the size of the program.
+            Polymorphism:
+            The word polymorphism is derived from two latin words poly(many) and morph (forms).
+            Polymorphism means the ability to take many forms. Polymorphism allows to take different
+            implementations for same name.
+            Poly -> many
+            Morph -> forms
+            ism -> behaviours
+            There are two types of polymorphism, Compile time polymorphism and Run time
+            polymorphism.
+            In Compile time polymorphism binding is done at compile time and in runtime polymorphism
+            binding is done at runtime.
+            e.g.: Method Overloading and Method Overriding
+            Method Overloading:
+             Method overloading is used for compile time polymorphism.
+             Same method name having different implementations with different number and type of
+            arguments.
+            Method Overriding:
+             Method overriding is used for runtime polymorphism
+            Base Class
+            Derived Class OOP Through Java
+             Method overriding is used to provide the specific implementation of a method which is
+            already provided by its superclass.
+            e.g.: mouseClick()
+            Close button -> Window gets closed
+            Max button -> window gets maximised
+            Min button -> window gets minimized
+            Abstraction:
+            It is a process of Hiding internal details and showing functionality is known as abstraction.
+            For example: Phone call, we don't know the internal processing.
+            Message Passing:
+            An object-oriented program contains a set of objects that communicate with one another. The
+            process of object-oriented programming contains the basic steps:
+            1. Creating classes
+            2. Creating objects
+            3. Establishing communication among objects
+            This communication is done with the help of methods (i.e., passing objects to methods)
+            Objects communicate with one another by sending and receiving information much the same
+            way as people pass messages to one another.
+            Message passing involves specifying the name of object, the name of the method (message) and
+            the information to be sent.
+            Example:
+            Advantages of OOP:
+            Object oriented technology provides many advantages to the programmer and the user. This
+            technology solves many problems related to software development, provides improved quality
+            and low-cost software.
+            1. Object oriented programs can be comfortably upgraded.
+            2. Using inheritance, we can eliminate redundant program code and reuse already existing
+            code.
+            3. Data hiding facilitates the programmer to design and develop safe programs.
+            4. Through polymorphism, it provides the extensibility of the code.
+            5. With OOP, programs are easy to understand.
+            6. With OOP, programs are easier to test, manage and maintain.
+            7. Objects can communicate with each other by message passing mechanism.
+            Applications of OOP:
+            The promising areas for application of OOP includes:
+            1. Real-time systems
+            2. Simulation and modelling
+            3. Object-oriented databases
+            4. Hypertext, hypermedia and expert text
+            5. AI and expert systems
+            6. Neural networks and parallel programming
+            7. Decision support and Automation system
+            8. CIM/CAM/CAD systems
+            History of java:
+            1. Java is an Object-Oriented Programming language, High level, Case Sensitive and
+            General purpose programming language.
+            2. JAVA was developed by James Gosling and his team at Sun Microsystems Inc in the
+            year 1991, later acquired by Oracle Corporation.
+            3. James Gosling is known as the father of Java.
+            4. Before Java, it was called Oak and was developed as a part of the Green project. Since
+            Oak was already a registered company, so James Gosling and his team changed the name
+            from Oak to Java In 1995.
+            5. Java is an island in Indonesia where the first coffee was produced (called Java coffee).
+            Java name was chosen by James Gosling while having a cup of coffee nearby his office.
+            6. Java is just a name, not an acronym.     
+</pre>
+<pre>
+Features (Buzzwords) of Java:  
+        1. Simple: Java is one of the simple languages as it does not have complex features like
+    pointers, operator overloading, multiple inheritances, and explicit memory allocation.
+    2. Object-Oriented: Java Supports OOP features like Class, Object, Encapsulation and
+    Data hiding, Abstraction, Inheritance, Polymorphism, Message Communication/ Message
+    Passing.
+    3. Portable: Java is portable because it facilitates you to carry the Java bytecode to any
+    platform. It doesn't require any implementation.
+    4. Platform independent: Java code can be executed on multiple platforms, for example,
+    Windows, Linux, Sun Solaris, Mac/OS, etc. Java code is compiled by the compiler and
+    converted into bytecode. This bytecode is a platform-independent code because it can be
+    run on multiple platforms, i.e., Write Once and Run Anywhere (WORA).
+    5. Secured: Java is best known for its security. With Java, we can develop virus-free
+    systems. Java is secured because:
+    No explicit pointer
+    Java Programs run inside a virtual machine sandbox
+    6. Robust: Java language is robust that means reliable.
+    The main features of java that make it robust are garbage collection, Exception Handling,
+    and memory allocation.
+    7. Architecture neutral: Java is architecture neutral because there are no implementation
+    dependent features, for example, the size of primitive types is fixed.In C programming, int data type occupies 2 bytes of memory for 16-bit architecture and 4
+    bytes of memory for 32 and 64-bit architecture. However, it occupies 4 bytes of memory
+    for both 32 and 64-bit architectures in Java.
+    8. Compiled and Interpreted: Unlike other languages Java uses a system with both a
+    compiler and an interpreter for program execution. First, the compiler converts the
+    program code to bytecode which in turn is converted to machine code on any machine,
+    using the interpreter. The machine code thus generated can be executed irrespective of
+    the system on which it is being executed.
+    9. High Performance: Java architecture is defined in such a way that it reduces overhead
+    during the runtime and at some time java uses Just In Time (JIT) compiler where the
+    compiler compiles code on-demand basics where it only compiles those methods that are
+    called making applications to execute faster.
+    10. Multithreaded: A thread is like a separate program, executing concurrently. We can
+    write Java programs that deal with many tasks at once by defining multiple threads. The
+    main advantage of multi-threading is that it doesn't occupy memory for each thread. It
+    shares a common memory area. Threads are important for multi-media, Web
+    applications, etc.
+    11. Distributed: We can create distributed applications using the java programming
+    language. Remote Method Invocation and Enterprise Java Beans are used for creating
+    distributed applications in java. The java programs can be easily distributed on one or
+    more systems that are connected to each other through an internet connection.
+    12. Dynamic: Java being completely object-oriented gives us the flexibility to add classes,
+    new methods to existing classes and even creating new classes through sub-classes. Java
+    even supports functions written in other languages such as C, C++ which are referred to
+    as native methods.
+    Applications of Java:
+    1. Desktop Applications such as acrobat reader, media player, antivirus, etc.
+    2. Web Applications such as irctc.co.in.
+    3. Enterprise Applications such as banking applications.
+    4. Mobile
+    5. Embedded System
+    6. Smart Card
+    7. Robotics                                                                                                                          Java Program Structure:
+    A java program may contain one or more sections as shown in the figure.
+    Documentation Section (Optional)
+    
+    1. This section comes first and it is also called as comments sections.
+    2. Comments are non-executable statements in any programming language.
+    3. Comments are used to write the program statement / program name.
+    e.g. /* Write a C++ program illustrating Checking whether the number is even or odd
+    using Ternary operator. */
+    4. Comments are used to write the program log.
+    e.g. /**Program Description : To check the no is even or odd
+    Created Date : 28/10/2021
+    Created Time : 10.00 am
+    Created by : ABC
+    Owner : XXX
+     */
+    5. Comments are used to write the remarks for each line in the program.
+    6. Comments are 3 types in java
+    1. Single line Comments:
+    Single-line comments start with two forward slashes (//).
+    Example: // This is a comment
+    2. Multi line Comments:
+    Multi-line comments start with /* and ends with */.
+    Example: /* Write a C++ program illustrating Checking
+     whether the number is even or odd
+     using Ternary operator. */
+    3. Documentation Comment: It starts with the delimiter (/) and ends with */.
+    7. Whatever written in the documentation section is the comment and is not compiled by the
+    compiler.
+    8. Documentation Section is optional since the program can execute without them.
+    Package statement (Optional)
+    The first statement in a java file is a package statement. It declares a package name and inform
+    the compiler that the classes define belong to the same package. This statement is optional.
+    Package package_name:
+    Package pkg1
+    {
+    …………………..
+    }
+    Package pkg2
+    {
+    ……………..
+    }
+    Import statement (optional)
+    These are similar to # include statement in C or C++, this instructs the interpreter to load the
+    method or class contained in the package.
+    Interface statement (optional):
+    RAGHU ENGINEERING COLLEGE (A) OOP Through Java
+    18
+    It is a class including a group of method declaration. It is used when multiple inheritances are
+    implementing.
+    Class definition
+    Classes are defining to make the objects of real-world problem. The number of classes used
+    depends on complexity of the program
+    Main method class:
+    It is the starting point and essential part of java programming while executing. It creates object of
+    various classes and established a communication between them.
+    Simple Java Program
+    public class Demo {
+    public static void main (String args[]) {
+    System.out.println("Welcome to Java Class");
+     }
+    }
+    Let us discuss the program line by line and understand the unique features that constitute a Java
+    program.
+    Class Declaration
+    The first line class Demo, class is a keyword used to declare the class. As we know Java is a
+    truly object-oriented language so everything must be placed inside a class. Demo is the identifier
+    in java that defines the name of the class.
+    Opening brace
+    Every class definition in java begins with an opening brace “{” and ends with a matching closing
+    brace “}”.
+    The Main Line:
+    public static void main (String args[])
+    Every Java program must include the main() method. Java applets does not use main() method.
+    This line contains a number of keywords public, static and void.
+    Public:
+    The keyword is an access modifier which represents visibility; it means it is accessible to all
+    other classes. This is similar to C++ public modifier.
+    Static:
+    Statics a keyword, if we declare any method as static, it is treated as static method. The static
+    method invoked without creating instance of a class. The main method is executed by the JVM,
+    so it doesn't require creating an object to call the main method. So, it saves memory.
+    void:
+    void means nothing. It is the return type. main method use void as it does not return any value.
+    String args[]:
+    main method accept some data from user as command line argument in form of String and this
+    can be achieved by String args[] array.
+    Identifiers in Java:
+    Identifiers in Java are symbolic names used for identification. They can be a class name, variable
+    name, method name, package name, constant name, and more.
+    Rules for Identifiers in Java
+    If the identifiers are not properly declared, we may get a compile-time error. Following are some
+    rules and conventions for declaring identifiers:
+     A valid identifier must have characters [A-Z] or [a-z] or numbers [0-9], and underscore
+    (_) or a dollar sign ($).
+    For example, @sample is not a valid identifier because it contains a special character
+    which is @.
+     There should not be any space in an identifier.
+    For example, Sample Program is an invalid identifier.
+     An identifier should not contain a number at the starting.
+    For example, 123Sample is an invalid identifier.
+     An identifier should be of length 4-15 letters only. However, there is no limit on its
+    length. But it is good to follow the standard conventions.
+     We can't use the Java reserved keywords as an identifier such as int, float, double, char,
+    etc.
+    For example, int double is an invalid identifier in Java.
+     An identifier should not be any query language keywords such as SELECT, FROM,
+    COUNT, DELETE, etc
+    Example:
+    public class SampleProgram{
+    public static void main (String args[]) {
+    System.out.println("Welcome to Java Class");
+     }
+    }
+    From the above example, we have the following Java identifiers:
+    1. SampleProgram (Class name)
+    2. main (User defined method)
+    3. String (Predefined class name)
+    4. args (String variables)
+    5. System (Predefined class name)
+    6. out (Instance name)
+    7. println (Predefined method name)
+    Valid identifiers:
+     TestVariable
+     testvariable
+     a
+     i
+     Test_Variable
+     _testvariable
+     $testvariable
+     sum_of_array
+     TESTVARIABLE
+     TEST123
+     Javatest123
+    Invalid identifiers:
+    Naming Conventions
+    Naming conventions specify the rules to be followed by a Java programmer while writing the
+    names of packages, classes, methods etc.
+    1. Package names are written in small letters.
+    e.g.: java.io, java.lang, java.awt etc
+    2. Each word of class name and interface name starts with a capital
+    e.g.: Sample, AddTwoNumbers
+    3. Method names start with small letters then each word start with a capital
+    e.g.: sum (), sumTwoNumbers (), minValue ()
+     Test Variable (We cannot include a space in an identifier)
+     123javatest (The identifier should not begin with numbers)
+     java+test (The plus (+) symbol cannot be used)
+     a-javatest (Hyphen symbol is not allowed)
+     java_&_Ttest (ampersand symbol is not allowed)
+     Java'test (we cannot use an apostrophe symbol in an identifier)4. Variable names also follow the same above method rule
+    e.g.: sum, count, totalCount
+    5. Constants should be written using all capital letters
+    e.g.: PI, COUNT
+    6. Keywords are reserved words and are written in small letters.
+    e.g.: int, short, float, public, void
+    Variables:
+     A variable is a name given to a memory location that is used to store the value.
+     The value stored in a variable can be changed during program execution.
+     In Java, all the variables must be declared before use.
+    Variable Declaration:
+    Variable initialization:
+    Types of Variables in Java
+    There are three types of variables in Java:
+    1. Local Variables
+    2. Instance Variables
+    3. Static Variables
+    1. Local Variables
+     A variable defined within a block or method or constructor is called a local variable.
+     The scope of these variables exists only within the block in which the variable is
+    declared. i.e., we can access these variables only within that block.
+     Initialization of the local variable is mandatory before using it in the defined scope.
+    Example:
+    class Add{
+    public static void main(String[] args){
+    int a=10, b=20; //Local variables
+    System.out.println (a+b);
+     }
+    }
+    2. Instance Variables
+     Instance variables are non-static variables and are declared in a class outside any method,
+    constructor, or block.
+     As instance variables are declared in a class, these variables are created when an object of
+    the class is created and destroyed when the object is destroyed.
+     Use access specifier for instance variables. If we do not specify any access specifier, then
+    the default access specifier will be used.
+     Initialization of Instance Variable is not mandatory. Its default value is 0
+     Instance Variable can be accessed only by creating objects.
+    Example:
+    class Add{
+    int a=10, b=20; // Instance variables
+    public static void main(String[] args){
+    // Instance or object creation
+    Add ob = new Add();
+    // Accessing Instance Variable using object
+    System.out.println (ob.a+ob.b);
+     }
+    }
+    3. Static Variables
+     Static variables are also known as Class variables.
+     These variables are declared similarly as instance variables. The difference is that static
+    variables are declared using the static keyword within a class outside any method
+    constructor or block.
+     Static variables are created at the start of program execution and destroyed automatically
+    when execution ends.
+     Initialization of Static Variable is not Mandatory. Its default value is 0
+     we can access the static variable like the Instance variable (through an object).
+     we can access the static variable with class name.
+     we can access the static variable without class name.
+    Example:
+    class Add{
+    static int a=10, b=20; // static variables
+    public static void main(String[] args){
+    // Instance or object creation
+    Add ob = new Add();
+    //Accessing static variables without class name
+    System.out.println (a+b);
+    //Accessing static variables with class name
+    System.out.println(Add.a+Add.b);
+    //Accessing static variables with object
+    System.out.println(ob.a+ob.b);
+     }
+    }
+    Diff b/w Instance Variables and Static Variables:
+    Instance Variables:
+     Instance Variables are declared without static keyword.
+     They are specific to object i.e., for every object, separate memory will be allocated for
+    each instance Variable.
+     They can be accessed only by using the Object.
+    Static Variables:
+     Static Variables are declared with static keyword.
+     They are also called as “Class Variables”.
+     They are not specific to any object.
+     The memory for static Variables will be allocated whenever the class is loaded in to the
+    memory i.e., memory will be allocated only once which will be shared by all the objects of
+    the class.
+    Data types in Java:
+     The type of value stored in a variable is called as datatype.
+    Ex: int a = 20;
+     char ch= „A‟;
+    Data types can be classified into two types in java
+    1. Primitive Data Types
+    2. Non-Primitive Data Types
+    Note:
+    Except Boolean and char all remaining data types are considered as signed data types because we
+    can represent both “+ve” and”-ve” numbers.
+    1. Primitive Data Types:
+     There are 8 primitive data types supported by Java.
+     Primitive data types are predefined by the language and named by a key word.
+    A. byte:
+     Size: 1 Byte (8 bits)
+     Max-value: +127
+     Min-value: -128
+     Range: -128 to 127 [-2
+    7
+    to 27
+    -1]
+    Example:
+    byte b=10; ► ✔
+    byte b2=130; ►C.E: possible loss of precision
+    byte b=10.5 ►C.E: possible loss of precision
+    byte b=true; ►C.E: incompatible types
+    byte b="REC"; ►C.E: incompatible types
+     byte data type is best suitable if we are handling data in terms of streams either from the
+    file or from the network.
+    B. short:
+     Size: 2 Bytes
+     Range: -32768 to 32767 (-2
+    15 to 215
+    -1)
+    Example:
+    short s=130; ► ✔
+    short s=32768; ►C.E: possible loss of precision
+    short s=true; ►C.E: incompatible types
+     The most rarely used data type in java is short.
+     Short data type is best suitable for 16-bit processors like 8086 but these processors are
+    completely outdated and hence the corresponding short data type is also outdated data
+    type.
+    C. Int:
+     Size: 4 bytes
+     Range: -2147483648 to 2147483647 (-2
+    31 to 231
+    -1)
+    Example:
+    int i=130; ► ✔
+    int i=10.5; ►C.E: possible loss of precision
+    int i=true; ►C.E: incompatible types
+     This is most commonly used data type in java.
+    D. long:
+     Size: 8 bytes
+     Range: -2
+    63 to 263
+    -1
+    Example:
+    long l= 13l;
+     To hold the no. Of characters present in a big file int may not enough hence the
+    return type of length() method is long.
+    long l=f.length() ; ►f is a file
+     Whenever int is not enough to hold big values then we should go for long data type.
+    Note:
+    All the above data types (byte, short, int and long) can be used to represent whole numbers. If we
+    want to represent real numbers then we should go for floating point data types.F. boolean data type:
+     Size: Not applicable (virtual machine dependent)
+     Range: Not applicable but allowed values are true or false.
+    Example1:
+    boolean b=true; ► ✔
+    boolean b=True; ►C.E: cannot find symbol
+    boolean b="True"; ►C.E: incompatible types
+    boolean b=0; ►C.E: incompatible types
+    Example 2:
+    int x=10;
+    if( x )
+    System.out.println(“Hello”);
+    else
+    System.out.println(“HI”);
+    ►Compiler error: incompatible types
+    Found: int
+    Require: boolean
+    G. char data type:
+     Size: 2 bytes
+     Range: 0 to 65535
+    Example:
+    char ch1=97; ►✓
+    char ch2=65536; ►C.E: possible loss of precision
+     In java we are allowed to use any worldwide alphabets character and java is Unicode
+    based to represent all these characters one byte is not enough compulsory we should go
+    for 2 bytes.                                                                                                                       Operators in Java:
+    Operator in Java is a symbol that is used to perform operations on variables / operands /
+    constants.
+    Java provides a rich set of operators to manipulate variables. We can divide all the Java operators
+    into the following groups:
+    1. Arithmetic Operators
+    2. Relational Operators
+    3. Bitwise Operators
+    4. Logical Operators
+    5. Assignment Operators
+    6. Unary Operators
+    7. Conditional Operator
+    8. Misc Operators
+    1. Arithmetic Operators
+    Java arithmetic operators are used to perform addition, subtraction, multiplication, and division.
+    They act as basic mathematical operations.Example
+    public class Test {
+     public static void main(String args[]) {
+     int a = 10;
+     int b = 20;
+     int c = 25;
+     System.out.println("a + b = " + (a + b));
+     System.out.println("a - b = " + (a - b));
+     System.out.println("a * b = " + (a * b));
+     System.out.println("b / a = " + (b / a));
+     System.out.println("b % a = " + (b % a));
+     System.out.println("c % a = " + (c % a));
+     }
+    }
+    2. Relational Operators
+    Relational operators are used to check the relationship between two operands.Example
+    public class Test {
+     public static void main(String args[]) {
+     int a = 10;
+     int b = 20;
+     System.out.println("a == b = " + (a == b));
+     System.out.println("a != b = " + (a != b));
+     System.out.println("a > b = " + (a > b));
+     System.out.println("a < b = " + (a < b));
+     System.out.println("b >= a = " + (b >= a));
+     System.out.println("b <= a = " + (b <= a));
+     }
+    }
+    3. Bitwise Operators
+    Bitwise operators in Java are used to perform operations on individual bits.Example:
+    public class Test {
+     public static void main(String args[]) {
+     int a = 60; /* 60 = 0011 1100 */
+     int b = 13; /* 13 = 0000 1101 */
+     int c = 0;
+     c = a & b; /* 12 = 0000 1100 */
+     System.out.println("a & b = " + c );
+     c = a | b; /* 61 = 0011 1101 */
+     System.out.println("a | b = " + c );
+     c = a ^ b; /* 49 = 0011 0001 */
+     System.out.println("a ^ b = " + c );
+     c = ~a; /*-61 = 1100 0011 */
+     System.out.println("~a = " + c );
+     c = a << 2; /* 240 = 1111 0000 */
+     System.out.println("a << 2 = " + c );
+     c = a >> 2; /* 15 = 1111 */
+     System.out.println("a >> 2 = " + c );
+     c = a >>> 2; /* 15 = 0000 1111 */
+     System.out.println("a >>> 2 = " + c );
+     }
+    }
+    Output
+    a & b = 12
+    a | b = 61
+    a ^ b = 49
+    ~a = -61
+    a << 2 = 240
+    a >> 2 = 15
+    a >>> 2 = 15
+    4. Logical Operators:
+    Logical operators are used to check whether an expression is true or false. They are used in
+    decision making.Example:
+    public class Test {
+     public static void main(String args[]) {
+     boolean a = true;
+     boolean b = false;
+     System.out.println("a && b = " + (a&&b));
+     System.out.println("a || b = " + (a||b));
+     System.out.println(“! (a && b) = " +! (a && b));
+     }
+    }
+    5. Assignment Operators:
+    Assignment operators are used in Java to assign values to variables.
+    Following are the assignment operators supported by Java language.Example:
+    public class Test {
+     public static void main(String args[]) {
+     int a = 10;
+     int b = 20;
+     int c = 0;
+     c = a + b;
+     System.out.println("c = a + b = " + c);
+     c += a;
+     System.out.println("c += a = " + c);
+     c -= a;
+     System.out.println("c -= a = " + c);
+     c *= a;
+     System.out.println("c *= a = " + c);
+     a = 10;
+     c = 15;
+     c /= a;
+     System.out.println("c /= a = " + c);
+     a = 10;
+     c = 15;
+     c %= a;
+     System.out.println("c %= a = " + c);
+    }
+    }6. Unary Operators
+    In Java, the unary operator is an operator that can be used only with an operand. It is used to
+    represent the positive or negative value, increment/decrement the value by 1,
+    and complement a Boolean value.Example 1: Java Unary Operator Example: ++ and --
+    public class OperatorExample{
+    public static void main(String args[]){
+    int x=10;
+    System.out.println(x++);
+    System.out.println(++x);
+    System.out.println(x--);
+    System.out.println(--x);
+    }
+    }
+    Output
+    10
+    12
+    12
+    10
 </pre>
 </body>
 </html>
