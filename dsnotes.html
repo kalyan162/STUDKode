@@ -6,18 +6,6 @@
     <title>DS notes</title>
 </head>
 <body>
-    <style>
-         body{
-        background-color: antiquewhite;
-        color: black;
-        font-size: larger;
-        font-weight: 700;
-        font-family: 'Times New Roman', Times, serif;
-    }
-    pre{
-        border: 2px solid black;
-    }
-    </style>
     <h1 style="text-align: center;">DS NOTES</h1>
     <pre>
 1. STACK OPERATIONS
@@ -422,5 +410,220 @@ int main(){
 }
 </pre>
     <pre>
-      
-        
+        Introduction to Data Structures and Algorithms
+Data Structure is a way of collecting and organising data in such a way that we can perform operations on these data in an effective way. Data Structures is about rendering data elements in terms of some relationship, for better organization and storage. For example, we have some data which has, player's name "Virat" and age 26. Here "Virat" is of String data type and 26 is of integerdata type.
+We can organize this data as a record like Player record, which will have both player's name and age in it. Now we can collect and store player's records in a file or database as a data structure. For example: "Dhoni" 30, "Gambhir" 31, "Sehwag" 33
+If you are aware of Object Oriented programming concepts, then a class also does the same thing, it collects different type of data under one single entity. The only difference being, data structures provides for techniques to access and manipulate data efficiently.
+In simple language, Data Structures are structures programmed to store ordered data, so that various operations can be performed on it easily. It represents the knowledge of data to be organized in memory. It should be designed and implemented in such a way that it reduces the complexity and increases the efficiency.
+Why we need data structures? – Advantages of DS
+We need data structures because there are several advantages of using them, few of them are as follows:
+1. Data Organization: We need a proper way of organizing the data so that it can accessed efficiently when we need that particular data. DS provides different ways of data organization so we have options to store the data in different data structures based on the requirement.
+2. Efficiency: The main reason we organize the data is to improve the efficiency. We can store the data in arrays then why do we need linked lists and other data structures? because when we need to perform several operation such as add, delete update and search on arrays , it takes more time in arrays than some of the other data structures. So the fact that we are interested in other data structures is because of the efficiency.
+Basic types of Data Structures
+As we have discussed above, anything that can store data can be called as a data structure, hence Integer, Float, Boolean, Char etc, all are data structures. They are known as Primitive Data Structures.
+Then we also have some complex Data Structures, which are used to store large and connected data. Some example of Abstract Data Structure are :
+Linked List
+Tree
+Graph
+Stack, Queue etc.
+All these data structures allow us to perform different operations on data. We select these data structures based on which type of operation is required. We will look into these data structures in more details in our later lessons.
+	
+The data structures can also be classified on the basis of the following characteristics:
+Characterstic
+Description
+
+Linear
+In Linear data structures,the data items are arranged in a linear sequence. Example: Array
+
+Non-Linear
+In Non-Linear data structures,the data items are not in sequence. Example: Tree, Graph
+
+Homogeneous
+In homogeneous data structures,all the elements are of same type. Example: Array
+
+Non-Homogeneous
+In Non-Homogeneous data structure, the elements may or may not be of the same type. Example: Structures
+
+Static
+Static data structures are those whose sizes and structures associated memory locations are fixed, at compile time. Example: Array
+
+Dynamic
+Dynamic structures are those which expands or shrinks depending upon the program need and its execution. Also, their associated memory locations changes. Example: Linked List created using pointers
+
+
+What is an Algorithm ?
+An algorithm is a finite set of instructions or logic, written in order, to accomplish a certain predefined task. Algorithm is not the complete code or program, it is just the core logic(solution) of a problem, which can be expressed either as an informal high level description as pseudocode or using a flowchart.
+Every Algorithm must satisfy the following properties:
+Input- There should be 0 or more inputs supplied externally to the algorithm.
+Output- There should be atleast 1 output obtained.
+Definiteness- Every step of the algorithm should be clear and well defined.
+Finiteness- The algorithm should have finite number of steps.
+Correctness- Every step of the algorithm must generate a correct output.
+An algorithm is said to be efficient and fast, if it takes less time to execute and consumes less memory space. The performance of an algorithm is measured on the basis of following properties :
+Time Complexity
+Space Complexity
+
+Space Complexity
+Its the amount of memory space required by the algorithm, during the course of its execution. Space complexity must be taken seriously for multi-user systems and in situations where limited memory is available.
+An algorithm generally requires space for following components :
+Instruction Space: Its the space required to store the executable version of the program. This space is fixed, but varies depending upon the number of lines of code in the program.
+Data Space: Its the space required to store all the constants and variables(including temporary variables) value.
+Environment Space: Its the space required to store the environment information needed to resume the suspended function.
+
+Time Complexity
+Time Complexity is a way to represent the amount of time required by the program to run till its completion. It's generally a good practice to try to keep the time required minimum, so that our algorithm completes it's execution in the minimum time possible. 
+Data Structure operations
+The basic operations that are performed on data structures are as follows:
+Insertion: Insertion means addition of a new data element in a data structure.
+Deletion: Deletion means removal of a data element from a data structure if it is found.
+Searching: Searching involves searching for the specified data element in a data structure.
+Traversal: Traversal of a data structure means processing all the data elements present in it.
+Sorting: Arranging data elements of a data structure in a specified order is called sorting.
+Merging: Combining elements of two similar data structures to form a new data structure of the same type, is called merging.
+    </pre>
+    <pre>
+        QUEUE:
+Queue is also an abstract data type or a linear data structure, just like stack data structure, in which the first element is inserted from one end called the REAR(also called tail), and the removal of existing element takes place from the other end called as FRONT(also called head).
+This makes queue as FIFO(First in First Out) data structure, which means that element inserted first will be removed first.
+Which is exactly how queue system works in real world. If you go to a ticket counter to buy movie tickets, and are first in the queue, then you will be the first one to get the tickets. Right? Same is the case with Queue data structure. Data inserted first, will leave the queue first.
+The process to add an element into queue is called Enqueue and the process of removal of an element from queue is called Dequeue.
+
+Basic features of Queue
+Like stack, queue is also an ordered list of elements of similar data types.
+Queue is a FIFO( First in First Out ) structure.
+Once a new element is inserted into the Queue, all the elements inserted before the new element in the queue must be removed, to remove the new element.
+peek( ) function is oftenly used to return the value of first element without dequeuing it.
+Applications of Queue
+Queue, as the name suggests is used whenever we need to manage any group of objects in an order in which the first one coming in, also gets out first while the others wait for their turn, like in the following scenarios:
+Serving requests on a single shared resource, like a printer, CPU task scheduling etc.
+In real life scenario, Call Center phone systems uses Queues to hold people calling them in an order, until a service representative is free.
+Handling of interrupts in real-time systems. The interrupts are handled in the same order as they arrive i.e First come first served.
+Implementation of Queue Data Structure
+Queue can be implemented using an Array, Stack or Linked List. The easiest way of implementing a queue is by using an Array.
+Initially the head(FRONT) and the tail(REAR) of the queue points at the first index of the array (starting the index of array from 0). As we add elements to the queue, the tail keeps on moving ahead, always pointing to the position where the next element will be inserted, while the head remains at the first index.
+
+When we remove an element from Queue, we can follow two possible approaches (mentioned [A] and [B] in above diagram). In [A] approach, we remove the element at head position, and then one by one shift all the other elements in forward position.
+In approach [B] we remove the element from head position and then move head to the next position.
+In approach [A] there is an overhead of shifting the elements one position forward every time we remove the first element.
+In approach [B] there is no such overhead, but whenever we move head one position ahead, after removal of first element, the size on Queue is reduced by one space each time.
+
+Algorithm for ENQUEUE operation
+Check if the queue is full or not.
+If the queue is full, then print overflow error and exit the program.
+If the queue is not full, then increment the tail and add the element.
+Algorithm for DEQUEUE operation
+Check if the queue is empty or not.
+If the queue is empty, then print underflow error and exit the program.
+If the queue is not empty, then print the element at the head and increment the head.
+/P4.3 Program of queue using array/
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 10
+int queue_arr[MAX];
+int rear=-1;
+int front=-1;
+void insert(int item);
+int del();
+int peek();
+void display();
+int isFull();
+int isEmpty();
+main()
+{
+	int choice,item;
+	while(1)
+	{
+		printf("1.Insert\n");
+		printf("2.Delete\n");
+		printf("3.Display element at the front\n");
+		printf("4.Display all elements of the queue\n");
+		printf("5.Quit\n");
+		printf("Enter your choice : ");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+		case 1:
+			printf("Input the element for adding in queue : ");
+			scanf("%d",&item);
+			insert(item);
+			break;
+		case 2:
+			item=del();
+			printf("Deleted element is  %d\n",item);
+			break;
+		case 3:
+			printf("Element at the front is %d\n",peek());
+			break;
+		case 4:
+			display();
+			break;
+		case 5:
+			exit(1);
+		default:
+			printf("Wrong choice\n");
+		}/End of switch/
+	}/End of while/
+}/End of main()/
+void insert(int item)
+{
+	if( isFull() )
+	{
+		printf("Queue Overflow\n");
+		return;
+	}
+	if( front == -1 )  
+		front=0;
+	rear=rear+1;
+	queue_arr[rear]=item ;
+}/End of insert()/
+int del()
+{
+	int item;
+	if( isEmpty() )
+	{
+		printf("Queue Underflow\n");
+		exit(1);
+	}
+	item=queue_arr[front];
+	front=front+1;
+	return item;
+}/End of del()/
+int peek()
+{
+	if( isEmpty() )
+	{
+		printf("Queue Underflow\n");
+		exit(1);
+	}
+	return queue_arr[front];
+}/End of peek()/
+int isEmpty()
+{
+	if( front==-1 || front==rear+1 )
+		return 1;
+	else
+		return 0;
+}/End of isEmpty()/
+int isFull()
+{
+	if( rear==MAX-1 )
+		return 1;
+	else
+		return 0;
+}/End of isFull()/
+void display()
+{
+	int i;
+	if ( isEmpty() )
+	{
+		printf("Queue is empty\n");
+		return;
+	}
+	printf("Queue is :\n\n");
+	for(i=front;i<=rear;i++)
+		printf("%d  ",queue_arr[i]);
+	printf("\n\n");
+}/*End of display() */
+    </pre>
+</body>
+</html>
