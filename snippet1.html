@@ -20,23 +20,23 @@
 <body>
     <h1 style="text-align: center;">JAVA</h1>
     <pre>
-    #include stdio.h>
-
-void manipulateArray(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        arr[i] += i;
-    }
-}
-
-int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    manipulateArray(arr, 5);
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-    return 0;
-}
+What does the following Java code snippet do?
+        #include stdio.h>
+        void manipulateArray(int arr[], int n) {
+            for (int i = 0; i < n; i++) {
+                arr[i] += i;
+            }
+        }
+        
+        int main() {
+            int arr[] = {1, 2, 3, 4, 5};
+            manipulateArray(arr, 5);
+            for (int i = 0; i < 5; i++) {
+                printf("%d ", arr[i]);
+            }
+            printf("\n");
+            return 0;
+        }
 
 <h2>Options:</h2>
 1 2 3 4 5
@@ -45,20 +45,20 @@ int main() {
 1 3 6 10 15
     </pre>
    <pre>
-   #include <stdio.h>
-
-void trickyLoop(int n) {
-    for (int i = 1; i <= n; i++) {
-        printf("%d ", i * i);
-        i += 2;
-    }
-}
-
-int main() {
-    trickyLoop(5);
-    printf("\n");
-    return 0;
-}
+What does the following Java code snippet do?
+        #include <stdio.h>
+        void Loop(int n) {
+            for (int i = 1; i <= n; i++) {
+                printf("%d ", i * i);
+                i += 2;
+            }
+        }
+        
+        int main() {
+            Loop(5);
+            printf("\n");
+            return 0;
+        }
 
 <h2>Options:</h2>
 1 4 9 16
@@ -67,20 +67,20 @@ int main() {
 1 9 25
     </pre>
        <pre>
- #include stdio.h>
-
-void trickyPointer(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d ", *arr++);
-    }
-}
-
-int main() {
-    int arr[] = {10, 20, 30, 40, 50};
-    trickyPointer(arr, 5);
-    printf("\n");
-    return 0;
-}
+What does the following Java code snippet do?  
+        #include stdio.h>
+        void trickyPointer(int arr[], int n) {
+            for (int i = 0; i < n; i++) {
+                printf("%d ", *arr++);
+            }
+        }
+        
+        int main() {
+            int arr[] = {10, 20, 30, 40, 50};
+            trickyPointer(arr, 5);
+            printf("\n");
+            return 0;
+        }
 
 <h2>Options:</h2>
 10 20 30 40 50(ans)
@@ -90,18 +90,18 @@ int main() {
     </pre>
 
              <pre>
-#include <stdio.h>
-
-void trickyBitwise(int a, int b) {
-    printf("a & b: %d\n", a & b);
-    printf("a | b: %d\n", a | b);
-    printf("a ^ b: %d\n", a ^ b);
-}
-
-int main() {
-    trickyBitwise(5, 3);
-    return 0;
-}
+What does the following Java code snippet do?                 
+        #include <stdio.h>
+        void trickyBitwise(int a, int b) {
+            printf("a & b: %d\n", a & b);
+            printf("a | b: %d\n", a | b);
+            printf("a ^ b: %d\n", a ^ b);
+        }
+        
+        int main() {
+            trickyBitwise(5, 3);
+            return 0;
+        }
 
 <h2>Options:</h2>
 a & b: 1, a | b: 7, a ^ b: 6(ans)
@@ -110,21 +110,20 @@ a & b: 0, a | b: 5, a ^ b: 8
 a & b: 5, a | b: 3, a ^ b: 1
     </pre>
           <pre>
-#include <stdio.h>
-
-void trickyArray(int arr[], int n) {
-    int *ptr = arr;
-    for (int i = 0; i < n; i++) {
-        printf("%d ", *(ptr + i));
-    }
-}
-
-int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    trickyArray(arr, 5);
-    printf("\n");
-    return 0;
-}
+What does the following Java code snippet do?
+        #include <stdio.h>
+        void trickyArray(int arr[], int n) {
+            int *ptr = arr;
+            for (int i = 0; i < n; i++) {
+                printf("%d ", *(ptr + i));
+            }
+        }
+        int main() {
+            int arr[] = {1, 2, 3, 4, 5};
+            trickyArray(arr, 5);
+            printf("\n");
+            return 0;
+        }
       
 <h2>Options:</h2>
 1 2 3 4 5(ans)
@@ -133,25 +132,25 @@ int main() {
 1 3 6 10 15
     </pre>
 <pre>
-  #include <stdio.h>
-
-void trickyString(char str[]) {
-    int i = 0;
-    while (str[i]) {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] = 'A' + (str[i] - 'a');
-        else if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] = 'a' + (str[i] - 'A');
-        i++;
-    }
-}
-
-int main() {
-    char str[] = "Hello World!";
-    trickyString(str);
-    printf("%s\n", str);
-    return 0;
-}
+What does the following Java code snippet do?
+        #include <stdio.h>
+        void String(char str[]) {
+            int i = 0;
+            while (str[i]) {
+                if (str[i] >= 'a' && str[i] <= 'z')
+                    str[i] = 'A' + (str[i] - 'a');
+                else if (str[i] >= 'A' && str[i] <= 'Z')
+                    str[i] = 'a' + (str[i] - 'A');
+                i++;
+            }
+        }
+        int main() {
+            char str[] = "Hello World!";
+            String(str);
+            printf("%s\n", str);
+            return 0;
+        }
+            
 <h2>Options:</h2>
 hELLO wORLD!(ans)
 HELLO WORLD!
@@ -160,21 +159,21 @@ hElLo WoRlD!
           
 </pre>
      <pre>
-       #include <stdio.h>
-
-int trickyLoop() {
-    int x = 0;
-    for (int i = 0; i < 5; i++) {
-        x += (i % 2 == 0) ? i : -i;
-    }
-    return x;
-}
-
-int main() {
-    int result = trickyLoop();
-    printf("Result: %d\n", result);
-    return 0;
-}
+What does the following Java code snippet do?
+        #include <stdio.h>
+        int Loop() {
+            int x = 0;
+            for (int i = 0; i < 5; i++) {
+                x += (i % 2 == 0) ? i : -i;
+            }
+            return x;
+        }
+        
+        int main() {
+            int result = Loop();
+            printf("Result: %d\n", result);
+            return 0;
+        }
 
 <h2>Options:</h2>
 Result: 5
