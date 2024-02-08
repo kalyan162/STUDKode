@@ -6,7 +6,7 @@
      "String str;",
      "char *str;",
       "float str = 3e2;",
-      "Both “String str;” and “float str = 3e2;”
+      "Both String str; and float str = 3e2;"
     ],
     correctAnswer: "string str;"
 },
