@@ -8,7 +8,7 @@
       "float str = 3e2;",
       "Both “String str;” and “float str = 3e2;”
     ],
-    correctAnswer: "Strig str;"
+    correctAnswer: "string str;"
 },
 {
     question: "In C language, FILE is of which data type?",
