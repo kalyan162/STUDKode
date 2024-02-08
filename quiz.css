@@ -5,7 +5,7 @@ body {
   background: #b5edcb;
   display: flex;
   justify-content: center;
-  font-size: x-large;
+  font-size: larger;
   font-weight: 500;
 }
 
