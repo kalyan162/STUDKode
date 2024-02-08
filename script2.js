@@ -1,54 +1,55 @@
  const quizData = 
  [
   {
-    question: "What is the main purpose of Java Virtual Machine (JVM)?",
+    question: "Which of the following declaration is not supported by C language?
+",
     options: [
-        "To compile Java source code",
-        "To execute Java bytecode",
-        "To interpret Java source code",
-        "To optimize Java applications"
+     "String str;",
+     "char *str;",
+      "float str = 3e2;",
+      "Both “String str;” and “float str = 3e2;”
     ],
-    correctAnswer: "To execute Java bytecode"
+    correctAnswer: "String str;"
 },
 {
-    question: "Explain the difference between '== 'and 'equals()' in Java.",
+    question: "In C language, FILE is of which data type?",
     options: [
-        "They are the same and can be used interchangeably",
-        "'==' compares object references, 'equals()' compares object content",
-        "'==' is used for primitive types, 'equals()' for objects",
-        "There is no difference between them"
+        "int",
+        "char*",
+        "struct",
+        "None of the above"
     ],
-    correctAnswer: "'==' compares object references, 'equals()' compares object content"
+    correctAnswer: "struct"
 },
 {
-    question: "What is the purpose of the 'final' keyword in Java?",
+    question: "What is #include <stdio.h>?",
     options: [
-        "To indicate the end of a program",
-        "To specify that a class cannot be extended, a method cannot be overridden, or a variable cannot be changed",
-        "To declare a constant",
-        "To mark a method as abstract"
+        " Preprocessor directive",
+      "Inclusion directive",
+     "File inclusion directive",
+        "None of the mentioned"
     ],
-    correctAnswer: "To specify that a class cannot be extended, a method cannot be overridden, or a variable cannot be changed"
+    correctAnswer: " Preprocessor directive"
 },
 {
-    question: "What is the difference between 'ArrayList' and 'LinkedList' in Java?",
+    question: "Which of following is not accepted in C?",
     options: [
-        "ArrayList is synchronized, LinkedList is not",
-        "ArrayList allows random access, LinkedList allows sequential access",
-        "ArrayList is more memory-efficient than LinkedList",
-        "There is no difference between them"
+        "static a = 10; //static as",
+        " static int func (int); //parameter as static",
+        "static static int a; //a static variable prefixed with static",
+        "All the above"
     ],
-    correctAnswer: "ArrayList allows random access, LinkedList allows sequential access"
+    correctAnswer:"static static int a; //a static variable prefixed with static"
 },
 {
-    question: "Explain the concept of method overloading in Java.",
+    question: "Functions in C Language are always _________",
     options: [
-        "It allows a method to be overridden by a subclass",
-        "It allows a method to have multiple implementations with different parameter types or numbers",
-        "It allows a method to call another method",
-        "It allows a method to be declared in multiple classes"
+        "Internal",
+        "External",
+        "Both Internal and External",
+        "External and internal are not valid trms for functions"
     ],
-    correctAnswer: "It allows a method to have multiple implementations with different parameter types or numbers"
+    correctAnswer: "External"
 }
   ];
   const quizContainer = document.getElementById('quiz');
