@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java notes</title>
+</head>
+<style>
+    body{
+        background-color: antiquewhite;
+        color: black;
+        font-size: larger;
+        font-weight: 700;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    pre{
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <h1 style="text-align: center;">C NOTES</h1>
+   <pre>
+     INTRODUCTION TO C PROGRAMMING: Structure of C program - Comments, Processor statement,Function header statement, Variable declaration statement and Executable statement; C character set, Constants, Identifiers, Operators, Punctuations, Keywords, Modifiers, Identifiers, Variables, C scopes, Basic data types, Type qualifiers, Storage classes, Reading and writing characters, Formatted I/O.
+
+UNIT-I
+Introduction to Computer:
+	A computer is a multipurpose electronic device that receive, process and store data. It takes the input in the form of numbers, text, sound, image, animations and video etc. Process the received input and convert it into meaningful information and presenting the changed input as output.
+	The input we are providing is called as ‘Data’, and the processed output is called as ‘Information’.
+	Input is the raw data entered into the computer by using input devices such as keyboard, mouse or any external devices. The raw data is processed by using CPU and converts it into some useful information and is put on the output devices such as monitor (screen), or printer.
+Types of Computer:
+Super Computer – It can do up to 10 trillion individual calculations per second.
+Server Computer – It allows other computers to connect, store and share electronic data and applications.
+Work station – It is high - end expensive computer, this is made for complex procedures.
+Personal Computer (PC) – It is also known as Micro Computer. It is an all – around device that can be used as a productivity tool.
+Micro Controller – Also called as Mini Computers that enable the user to store data and execute simple commands and tasks. It has minimal memory. It is mainly used in embedded systems.
+Programming Languages:
+	It is a formal language that specifies a set of instructions that can be used to produce various kinds of output. It generally consists of instructions for computer.
+The description of a programming language is usually split into the two components of syntax (form) and semantics (meaning).
+A computer programming language is a language used to write computer programs, which involves a computer performing some kind of computationor algorithm.
+Introduction to C:
+	C programming language is most popular programming language. C was created in 1972 by Dennis Ritchie at the Bell Labs in USA as a part of UNIX operating system. C was also used to develop some parts of this operating system.
+	Most of the operating systems like Linux, Windows™, and Mac™ are either developed in C language.
+	Possibly why C seems so popular is because it is reliable, simple and easy to use.
+
+There are several reasons why we need to learn C even it is a part of C++, C#, and JAVA:
+
+I believe that nobody can learn C++ or Java directly. This is because while learning these languages we have things like classes, objects, inheritance, polymorphism, templates, exception handling, etc. to deal with apart from knowing the actual language elements.
+
+Major parts of popular operating systems like Windows, UNIX, Linux is still written in C. This is because even today when it comes to performance (speed of execution) nothing beats C. Moreover, if one is to extend the operating system to work with new devices one needs to write device driver programs. These programs are exclusively written in C.
+
+Mobile devices like cellular phones and palmtops arebecoming increasingly popular. Also, common consumerdevices like microwave oven, washing machines and digitalcameras are getting smarter by the day. This smartness comesfrom a microprocessor, an operating system and a programembedded in this devices. These programs not only have torun fast but also have to work in limited amount of memory.No wonder that such programs are written in C. With theseconstraints on time and space, C is the language of choicewhile building such operating systems and programs.
+
+I hope that these are very convincing reasons why one should adopt C as the first and the very important step in your quest for learning programming languages.
+
+Features of C:
+It is a robust language with rich set of built-in functions and operators that can be used to write any complex program.
+The C compiler combines the capabilities of an assembly language with features of a high-level language.
+Programs Written in C are efficient and fast. This is due to its variety of data type and powerful operators.
+C is highly portable this means that programs once written can be run on another machines with little or no modification.
+Another important feature of C program is its ability to extend itself.
+A C program is basically a collection of functions that are supported by C library. We can also create our own function and add it to C library.
+C language is the most widely used language in operating systems and embedded system development today.
+
+
+Structure of C Program:
+In general, a C program is composed with the following sections:
+Section 1: Pre-processor directives.
+Section 2: Global Declaration.
+Section 3: Functions.
+Section 1 and 2 are optional, i.e they may or may not present in C program, but Section 3 is mandatory. Because C program is made up of functions.
+A Simple program that prints Hello World!
+// Comment: First C program
+#include<stdio.h>
+main()
+{
+	printf(“Hello World! \n”);
+}
+Output:
+Hello World!
+
+Let us take a look at the various parts of the above program:
+
+Comments – 
+The first line of the program // is a comment. Comments are used to convey a message and to increase the readability of a program. They are not processed by the compiler. They are two types of comments:
+Single – line comment.
+Multi – line comment.
+Single – line Comment: It starts with two forward slashes (i.e //) and is automatically terminated with the end – of the line. The first line of our program is a single line comment.
+Multi – line Comment: It starts with /* and terminates with */. It is used when multiple lines of text are to be commented.
+Section 1:Preprocessor Directive Section – 
+	The second line of our program is #include<stdio.h> is a pre-processor directive statement. Actually this section is optional but we will find it in most of the C programs. #include<stdio.h> includes that Standard input/output (stdio) header(.h) file. This file includes standard input output functions like printf() scanf() in the program.
+	The following points must be remembered while writing a pre-processor directives:
+The pre-processor directive should always start with hash symbol (#).
+The # symbol should be the first non-white space character in a line.
+It will terminated with the new line character not with semicolon.
+Pre-processor directives are executed before the compiler compiles the source code.
+
+Some important  pre-processor directives:
+#define 		Substitutes a pre-processor Macro (constant)
+#include	Inserts a particular header file from another file.
+#undef		undefines a pre-processor macro.
+#ifdef		Returns true if the macro is defined.
+#ifndef		Returns true if the macro is not defined.
+#if 		Tests if a compile time condition is true.
+#else		The alternative of #if.
+#elif		#if and #else in one statement.
+#endif		Ends pre-processor conditional statement.
+#error		Prints error message on console output device.
+
+
+
+
+Examples:
+
+#define MAX_ARRAY_LENGTH 20
+This directive tells the CPP to replace instances of MAX_ARRAY_LENGTH with 20. Use #define for constants to increase readability.
+
+Section 2: Global Declaration Section-
+In this section global variables and user defined functions are declared before main(). These functions can be accessed by the all used defined functions including main(). If a user defined function or a variable is not declared in this section it will not accessed by the remaining functions.
+Section 3: Function Section –
+This section is mandatory. This section have one or more functions. A function named main() is always required. Every function consists of two parts:
+Header of the Function.
+Body of the Function.
+Header of the Function:
+The general form of the header of the function is:
+[return-type] function_name([argument_list])
+The terms enclosed within square brackets are optional.
+Body of the Function:
+The body of a function consists of a set of statements enclosed with in braces{}. And these statements are of two types:
+Non – Executable Statements  (Ex – Declaration Statements)
+Executable Statements (Ex – Function call statements like printf()..)
+It is possible that no statement present within the braces. In such case the program produces no output on execution.
+If any statements present in the function non-executable statements should present prior to the executable statements.
+Compile and Execute a C Program:
+Let us see how to save the source code in a file, how to compile and how to run it.
+Open a text editor and add the above mentioned code.
+Save the file as hello.c.
+Open command prompt and go to the directory where we have saved the file.
+Type cc file_name.c and press enter to compile our code.
+If there are no errors in our code, the command prompt will take you to the next line and would generate a.out executable file.
+Now type ./a.out to execute our program.
+Finally we will get output.
+$cc hello.c
+$./a.out
+Hello world!
+
+C Character Set:
+A character set defines the valid characters that can be used in a source program (or) interpreted when a program is running.
+The set of characters that can be used to write a source program is called ‘Source Character set’. And the set of characters that can be available when the program is being executed is called an ‘Execution Character set’.
+It is possible that the source character set is different from the execution character set, but in most cases they are identical.
+
+Source Character Set
+This character set is used to construct statements in a source program.
+Alphabets
+A to Z and a to z
+
+Digits
+0 to 9
+
+Special characters
++,-,*,!,<,>,?, @, #. The others are listed below in detail
+
+Whitespaces
+Blank space, horizontal tab, vertical tab, new line, form feed
+
+
+Special Characters are listed below
+Symbol 
+Name 
+Symbol 
+Name 
+
+~		
+Tilde
+-
+Minus sign
+
+!	
+Exclamation Mark
+=  	
+Equal to sign
+
+#
+Number sign
+{	
+Left flower brace
+
+$
+Dollar sign
+} 
+right flower brace
+
+%
+Percentage sign
+[
+Left bracket
+
+^
+Caret
+]
+Right bracket
+
+&
+Ampersand
+:
+Colon
+
+*
+Asterisk
+“
+Quotation mark
+
+(          
+Left Parenthesis
+<
+Opening angle bracket (less than sign)
+
+)
+Right Parenthesis
+;
+Semicolon
+
+_
+Underscore
+>
+Closing angle bracket (greater than sign)
+
++
+Plus sign
+?
+Question mark
+
+|
+Vertical bar
+,
+Comma
+
+\
+Backslash
+.
+Period (dot)
+
+‘
+Apostrophe
+/
+Slash
+
+@
+At symbol
+
+
+
+
+Execution Character Set
+Execution characters are used at the time of execution. They are invisible and cannot be printed or displayed correctly. They are always represented by a backslash(\) followed by a character. They are also known as non graphic characters, symbols or escape sequences. Some of them are given below
+Symbols 
+Symbol 
+Name 
+Symbol 
+Name 
+
+‘\b’
+Blank space 
+'\f'
+Form feed 
+
+'\n'
+Newline 
+'\r'
+Carriage return 
+
+'\t'
+Horizontal tab 
+'\v'
+Vertical tab
+
+
+Constants
+A Constant is an entity whose value remains the same throughout the execution of the program. These fixed values are also called as Literals.They are classified into three types:
+Literal Constants.
+Qualified Constants.
+Symbolic Constants.
+
+Literal Constants
+They are just called as Literals denotes a fixed value, which may be an integer, floating point number, character or a string.
+Integer Literal Constant
+An integer literal can be a decimal, octal, or hexadecimal constant. A prefix specifies the base or radix: 0x or 0X for hexadecimal, 0 for octal, and nothing for decimal.
+An integer literal can also have a suffix that is a combination of U and L, for unsigned and long, respectively. The suffix can be uppercase or lowercase and can be in any order.
+Following are other examples of various types of integer literals −
+85         /* decimal */
+0213       /* octal */
+0x4b       /* hexadecimal */
+30         /* int */
+30u        /* unsigned int */
+30l        /* long */
+30ul       /* unsigned long */
+Floating Point Literal Constant
+It can be written in a Fractional form or Exponential Form. The rules for writing floating point literal constants are:
+A fractional floating point literal constant must have at least one digit.
+It should have a decimal point.
+It can be either positive or negative.
+No special characters or blank spaces are allowed.
+Here are some examples of floating-point literals −
+3.14159       /* Legal */
+314159E-5L    /* Legal */
+210f          /* Illegal: no decimal or exponent */
+.e55          /* Illegal: missing integer or fraction */
+	Character Literal Constant
+	It can have one or at most two characters enclosed within single quotes e.g. ‘A’, ‘a’, ‘\n’ etc. These are classified into two types:
+Printable Character Literal Constant.
+Non – Printable Character Literal Constant.
+
+Printable Character Literal Constant: All characters of source character set except quotation mark, backslash, and new line character when enclosed within a single quotes form a Printable Character Literal Constant. Ex: ‘A’, ‘2’..
+Non – Printable Character Literal Constant: These are represented with the help of ‘Escape Sequences’. An escape sequence consists of backward slash (\) followed by a character and both enclosed within a single quote. Ex: ‘\n’, ‘\t’..
+List of Escape Sequences
+S.NO
+Escape Sequence
+Character Value
+Action on Output Device
+
+1
+\’
+Single quotation mark
+Prints ‘
+
+2
+\”
+Double quotation mark
+Prints “
+
+3
+\?
+Question Mark
+Prints ?
+
+4
+\\
+Backslash character(\)
+Prints \
+
+5
+\a
+Alert
+Generates beep sound
+
+6
+\b
+Back space
+Moves the cursor one position to the left of its current position.
+
+7
+\f
+Form Feed
+Moves the cursor to the beginning of the next page
+
+8
+\n
+New line
+Moves the cursor to the beginning of the next line.
+
+9
+\r
+Carriage Return
+Moves the cursor to the beginning of the current line.
+
+10
+\t
+Horizontal Tab
+Moves the cursor to the next horizontal tab stop
+
+String Literal Constant: It consists of a sequence of characters. Here each constant is implicitly terminated by a null character. So the length of the string constant is +1 than the actual length.
+Qualified Constants: These are created by using ‘const’ qualifier. 
+			Ex: const int a=10;
+Constants are not able to modified, but they are able to access.
+Symbolic Constants: These are created with the help of define pre-processor directive. 
+Ex: #define pi 3.14
+Identifiers
+An Identifier refers to the name of an object. It can be a variable name, a function name, a typedef name, a macro name, or a structure name, or a union name.
+The syntactic rules to write an identifier name in C are as follows:
+It should have letters, digits or underscores.
+The first character of an identifier must be a letter not digit.
+No special characters can be used (, ).
+Keywords are not used for identifiers.
+The maximum number of letters in an identifier depends on compiler.
+Ex: Student_Name, StudentName, Student123..	
+
+Operators
+An operator is a symbol that tells the compiler to perform specific mathematical or logical functions. C language is rich in built-in operators and provides the following types of operators −
+Arithmetic Operators
+Relational Operators
+Logical Operators
+Assignment Operators
+Conditional Operators
+Special Operators
+Bitwise operators
+Increment and decrement operators
+Unary operators
+Equality operators
+
+Arithmetic Operators
+The operators used for basic arithmetic are =, +, -, *, and /. 
+Operator
+Meaning
+Details
+
++
+Addition
+Performs addition on integer numbers, floating point numbers. The variable name which is used is the operand and the symbol is operator.
+
+-
+Subtraction
+Subtracts one number from another. 
+
+*
+Multiplication
+Used to perform multiplication
+
+/
+Division
+It produces the Quotient value as output.
+
+%
+Modulo
+It returns the remainder value as output.
+
+	Ex:   x+y, x-y, x/y, x*y, x%y. Here x and y are operands, it holds value.
+	/* Program to demonstrate the working of arithmetic operators in C.  */
+#include <stdio.h>
+int main()
+{
+    int a=9,b=4,c;
+    c=a+b;
+    printf("a+b=%d\n",c);
+    c=a-b;
+    printf("a-b=%d\n",c);
+    c=a*b;
+    printf("a*b=%d\n",c);
+    c=a/b;
+    printf("a/b=%d\n",c);
+    c=a%b;
+    printf("Remainder when a divided by b=%d\n",c);
+    return 0;
+ }
+}
+Output
+a+b=13
+a-b=5 
+a*b=36
+ a/b=2
+ Remainder when a divided by b=1
+
+Relational Operators
+Relational Operators are used to compare two same quantities.
+The general form is 
+(exp1 relational operator exp2)
+There are six relational operators. They are mentioned one below another as follows.
+Operator
+Meaning 
+Example
+
+<
+is less than 
+5<3 returns false (0)
+
+<=
+>
+is less than or equal to 
+is greater than
+5<=3 return false (0)
+5>3 returns true (1)
+
+>=
+is greater than or equal to 
+5>=3 returns true (1)
+
+= =
+is equal to 
+5==3 returns false (0)
+
+!=
+is not equal to 
+5!=3 returns true(1)
+
+#include<stdio.h>
+main()
+{
+
+	int a =21;
+	int b =10;
+	int c ;
+
+	if( a == b )
+	{
+		printf(“ a is equal to b\n");
+	}
+	else
+	{
+		printf("a is not equal to b\n");
+	}
+	
+	if( a < b )
+	{
+		printf("a is less than b\n");
+	}
+	else
+	{
+		printf("a is not less than b\n");
+	}
+	
+	if( a > b )
+	{
+		printf("a is greater than b\n");
+	}
+	else
+	{
+		printf("a is not greater than b\n");
+	}
+
+	/* Lets change value of a and b */
+	
+	a =5;
+	b =20;
+	
+	if( a <= b )
+	{
+		printf("a is either less than or equal to  b\n");
+	}
+	
+	if( b >= a )
+	{
+		printf("b is either greater than  or equal to b\n");
+	}
+}
+When you compile and execute the above program, it produces the following result −
+a is not equal to b
+a is not less than b
+a is greater than b
+a is either less than or equal to  b
+b is either greater than  or equal to b
+
+Logical Operators
+Logical Operators are used when we need to check more than one condition.  It is used to combine two or more relational expressions. Logical Operators are used in decision making. Logical expression yields value 0 or 1 i.e., (Zero or One). 0 indicates that the result of logical expression is TRUE and 1 indicates that the result of logical expression is FALSE.
+
+Logical Operator
+Meaning 
+
+&&
+Logical AND 
+
+||
+Logical OR 
+
+!
+Logical NOT 
+
+Logical AND ( &&)
+The result of the Logical AND operator will be TRUE If both value is TRUE. If any one of the value is false then the result will be always False. The result is similar to basic Binary multiplication.
+Eg:		a > b && x = = 10 
+The expression is true only if both expressions are true i.e., if a is greater than b and x is equal to 10. 
+Logical OR ( || )
+If any of the expression is true the result is true else false otherwise. The result is similar to basic Binary addition.
+The logical OR is used to combine 2 expressions or the condition evaluates to true if any one of the 2 expressions is true. 
+Eg:			a < m || a < n 
+It evaluates to true if a is less than either m or n and when a is less than both m and n. 
+Logical NOT ( ! )
+It acts upon single value. If the value is true result will be false and if the condition is false the result will be true. The logical not operator takes single expression and evaluates to true if the expression is false and evaluates to false if the expression is true.
+Eg 			(!a)
+4.Assignment Operators
+The Assignment Operator evaluates an expression,from the right of the expression and substitutes it to the variable on the left of the expression. The general form is 
+identifier = expression;
+Eg:	x = a + b;
+Here the value of a + b is evaluated and substituted to the variable x. ‘=’ equal to is used in Assignment operators. It is of two types. They are
+(i) Simple assignment operator
+In Simple assignment operator only ‘=’ equal to operator is used. It is used to assign a value to variable or expression. The general form is 
+identifier = expression;
+Eg:			y=35; x=ax+b-c;
+(ii) Shorthand assignment operator
+Shorthand assignment operator must be an arithmetic operator or bitwise operator. The general form is 
+identifier <operator> = expression; 
+The operator must be an arithmetic operator or bitwise operator.
+Operator
+Meaning
+Example
+Simple. Assign
+Example
+Shorthand
+
++=
+Assign sum
+x = x + 1
+x+ =1
+
+-=
+Assign difference
+y = y - 1
+y-=1
+
+*=
+Assign product
+z=z*(x+y)
+z*=(x+y)
+
+/=
+Assign quotient
+y=y/(x+y)
+y/=(x+y)
+
+%=
+Assign remainder
+x=x%z
+x%=z
+
+~=
+Assignone’s complement
+
+
+
+<<=
+Assign left shift
+x = x << z  
+x << = z  
+
+>>=
+Assign right shift
+
+
+
+&=
+Assign bitwise AND
+y = y&x
+y&=x
+
+|=
+Assign bitwise OR
+
+
+
+^=
+Assign bitwise X - OR
+z = z^y
+z^=y
+
+var=5 //5 is assigned to var
+ a=c; //value of c is assigned to a 
+5=c; // Error! 5 is a constant
+5. Conditional Operators
+Conditional Operator is also known as “Ternary operator”. The general form of Conditional Operator is 
+(exp1)?(exp2):(exp3);
+where exp1 is the condition which is to be checked and exp2 is the true value and exp3 is the false value. If the condition in exp1 is true then statement in exp2 is executed and if the condition in exp1 is false then statement in exp3 will be automatically executed.
+Eg:
+	#include<stdio.h>
+	void main()
+	{	
+		int x,y,z;
+clrscr();
+		printf(“Enter the value of a and b :”);
+		scanf(“%d %d”,&x,&y);
+		z=((x>y)?x:y);
+		printf(“The biggest value is %d”,z);
+		getch();
+	}
+6.Special Operators
+Special operators are known as separators or punctuators. Special operators are 
+Ampersand ( & )	or 	Address Operator
+Asterisk ( * )		or 	Indirection Operator
+Braces ( { } )		
+Colon ( : )		
+Ellipsis ( … )
+Brackets ( [] )		or	Array Subscript Operator	
+Comma ( , )		
+Hash ( # )
+Parenthesis ( () )	or	Function call Operator
+Semicolon ( ; )
+
+8.Increment and Decrement Operators
+Increment Operators
+It is used to increase the value of the Operand by 1. There are two types of Increment Operators in C Language. They are pre Increment operator and post Increment operator.
+Prefix Increment Operator
+It is used to increase the value of the variable by 1. Here the value of 1 is added to the variable first along with the given variable value. 
+Eg:			++g	->	prefix increment (Increment g, then evaluate g)
+Example
+int x = 5;
+int y = ++x; // x is now equal to 6, and 6 is assigned to y
+
+Postfix Increment Operators
+It is used to increase the value of the variable by 1. Here the value of 1 is added to the variable first along with the given variable value. 
+Eg:		g++	->	postfix increment (Evaluate g, then increment g)
+
+Example
+int x = 5;
+int y = x++; // x is now equal to 6, and 5 is assigned to y
+
+C program to perform increment operation
+#include<stdio.h>
+void main( )
+{
+int a,b,x=10,y=10;
+a = x++;
+b = ++y;
+printf(“The value of a is: %d”,a);
+printf(“The value of b is: %d”,b);
+}
+
+Output
+The value of a : 10
+The value of b : 11
+Decrement Operators
+It is used to decrease the value of the Operand by 1. There are two types of Decrement Operators in C Language. They are pre decrement operator and post decrement operator.
+Prefix decrement Operator
+It is used to decrease the value of the variable by 1. Here the value of 1 is subtracted to the variable first along with the given variable value. 
+Eg:		--g	------>		prefix decrement (Decrement g, then evaluate g)
+Example
+int x = 5;
+int y = --x; // x is now equal to 4, and 4 is assigned to y
+
+Postfix Decrement Operator
+It is used to decrease the value of the variable by 1. Here the value of 1 is subtracted to the variable first along with the given variable value. 
+Eg:		g--    ---->	postfix decrement (Evaluate g, then decrement g)
+Example
+int x = 5;
+int y = x--; // x is now equal to 4, and 5 is assigned to y
+
+C program to perform decrement operation
+#include<stdio.h>
+void main( )
+{
+int a,b,x=10,y=10;
+a = x--;
+b = --y;
+printf(“The value of a is: %d”,a);
+printf(“The value of b is: %d”,b);
+}
+
+Output
+The value of a : 10
+The value of b : 9
+9. Unary Operators
+Unary operators act on single operand to produce new value. It precedes with operands. Unary minus denotes subtraction. Subtraction operators require two operands but unary minus require one operand. The operand used with this operator must be a single variable. 
+Operator
+Meaning
+  
+  -
+  Unary minus
+  
+  +
+  Unary Plus
+  
+  ++
+  Increment by 1
+  
+  --
+  Decrement by 1
+  
+  Sizeof
+  Return the size of operand
+
+Eg:
+-786		-0.64		-5e-8		-(a+b)		-6*(f+b)	-45.878
+When operator is used before variable then it is prefix notation. When operator is used after variable then it is postfix notation.
+Eg: x=3
+Expression	Result
+++x		4
+x++		3
+--x		2
+x--		3
+Size-of Operator
+This operator is used to return the size of string or character. It cannot be used in together with Integers. The syntax is 
+sizeof(variable-name);
+Eg:
+#include<stdio.h>
+void main()
+{
+int x;
+clrscr();
+printf(“The value of x is %d”,sizeof(x));
+getch();
+}
+Precedence of Operators
+Outermost Parenthesis is evaluated first.
+Then innermost parenthesis.
+If there is two or more parenthesis, then the order of execution is from left to right.
+Next Multiplication and Division are performed.
+Finally Addition and Subtraction.
+10. Equality Operators
+	Equality operator ( = ) is used together with condition. The value of the expression is one or zero. If the expression is true the result is one, if false result is zero. 
+Operator     
+Meaning
+
+= =              
+Equal to
+
+!=	
+Not equal to
+
+
+Example:
+x = 1 and y = 2 then
+x = =2	is false 	,	x = = 1 true	,	y != 3 true
+Example: Consider the following program:
+main() 
+{
+int r=10, area;	
+area = 3.14 * r * r;
+printf("area of circle = %d\n", area);
+}
+
+Punctuations – 
+The punctuation and special characters in the C character set have various uses, from organizing program text to defining the tasks that the compiler or the compiled program carries out. They do not specify an operation to be performed. 
+Syntax
+( ) [ ] { } * , : = ; ... #
+These characters have special meanings in C. # occurs only in pre-processor directives.
+Keywords – 
+Keyword is a reserved word that has a particular meaning in the programming language. The meaning of the keyword is predefined. A keyword cannot be used as an identifier name in C language. There are 32 keywords available in C. The following table shows the list of keywords:
+auto
+double
+int
+struct
+
+break
+else
+long
+switch
+
+case
+enum
+register
+typedef
+
+char
+extern
+return
+union
+
+const
+float
+short
+unsigned
+
+continue
+for
+signed
+void
+
+default
+goto
+sizeof
+volatile
+
+Do
+if
+static
+while
+
+
+Variables – 
+Variable is a name given to Memory location in which data is stored. Variable acts as value, which changes during the execution of program. Variable may take different value at different times during execution. 
+The general format of any variable declaration 
+datatype v1, v2, v3, ……….. vn
+where v1, v2, v3 are variable names. Variables are separated by commas. A declaration statement must end with a semicolon. 
+Eg:			int sum; 
+double average, mean; 
+Variable Assignment
+It is another format of variable declaration. The general form is 
+data-type variable name [=value];
+Here data type refers to the type of value used in the C program. Variable name is a valid name.
+Eg:				int a; 	(or) 	int a=10;
+Here if the value of a is assigned 10 the value remains the same throughout the program. If no value is specified then the value keeps on changing.
+Simple Variable Assignment
+To assign a single value to a variable ‘=’ equality operator is used. The syntax is
+variable-name = value;
+Eg:		X=10; y=30;
+Compound Variable Assignment
+variable-name = expression;
+This type of variable declaration can be used together with combination of characters, numbers or an expression. Here ‘=’ equality operator is used.
+Eg:		Y=x+5;	Z= ((x+1) (y-2)*x)
+Declaring a variable as constant
+Variable is declared as constant by using the keyword or qualifier ‘const’ before the variable name. This can be done at the time of initialization. 
+Eg: const int class_size = 40; 
+
+Volatile Variable
+A variable is volatile if the value gets changed at any time by some of the external sources.
+Eg: volatile int num;
+When we declare a variable as volatile the compiler will examine the value of the variable each time it is encountered to see if an external factor has changed the value. 
+C Scopes
+Scope of the variable is the visibility of the variable in the block. 
+Visibility means accessibility (or) area of the program we can access the variable.
+There are four types:
+File scope or Global Scope
+Block scope or Local scope
+Function prototype scope
+Function scope
+File Scope/ Global Scope – Identifier is said to have global scope / file scope if it is defined outside the function and whose visibility is entire program
+Global Scope: Can be accessed anywhere in a program.
+// filename: file1.c
+int a;//global variable
+int main(void)
+{
+a = 2;
+}
+// filename: file2.c
+// When this file is linked with file1.c, functions of this file can access a
+extern int a;
+int myfun()
+{
+a = 2;
+}
+To restrict access to current file only, global variables can be marked as static.
+
+Block Scope/ Local Scope - If an identifier has scope only within the area where it is declared then the scope of the Identifier is called  Block Scope
+
+
+Block Scope: A Block is a set of statements enclosed within left and right braces ( and respectively). Blocks may be nested in C (a block may contain other blocks inside it). A variable declared in a block is accessible in the block and all inner blocks of that block, but not accessible outside the block.
+
+What if the inner block itself has one variable with the same name?
+
+If an inner block declares a variable with the same name as the variable declared by the outer block, then the visibility of the outer block variable ends at the pint of declaration by inner block.
+
+voidmain()
+{
+int x = 10, y = 20;
+{
+// The outer block contains declaration of x and y, so following statement is valid and prints //10 and 20
+printf("x = %d, y = %d\n", x, y);
+{
+// y is declared again, so outer block y is not accessible in this block
+int y = 40;
+x++; // Changes the outer block variable x to11
+y++; // Changes this block's variable y to 41
+printf("x = %d, y = %d\n", x, y);
+}
+// This statement accesses only outer block's variables
+printf("x = %d, y = %d\n", x, y);
+}
+}
+
+Output:
+x = 10, y = 20
+x = 11, y = 41
+x = 11, y = 20
+
+What about functions and parameters passed to functions?
+A function itself is a block. Parameters and other local variables of a function follow the same block scope rules.
+
+Can variables of block be accessed in another subsequent block?
+* No, a variable declared in a block can only be accessed inside the block and all inner blocks of this block. For example, following program produces compiler error.
+
+int main()
+{
+{
+int x = 10;
+}
+{
+printf("%d", x); // Error: x is not accessible here
+}
+return 0;
+}
+Output:
+error: 'x' undeclared (first use in this function)
+
+Function Prototype Scope - An identifier that appears within a function prototype's list of parameter declarations has function prototype scope. The scope of such an identifier begins at the identifier's declaration and terminates at the end of the function prototype declaration list. 
+For example:
+	int students ( int david, int susan, int mary, int john ); 
+In this example, the identifiers (david, susan, mary , and john ) have scope beginning at their declarations and ending at the closing parenthesis. The type of the function students is "for the actual parameter names to be used function returning int with four int parameters." In effect, these identifiers are merely placeholders  after the function is defined. 
+Function Scope – A label is the only kind of identifier that always has Function Scope. It can be used any where within the function in  which an identifier  - labeled statement specifying the label name appears.
+For example:
+	int func1(int x, int y, int z) 
+	{ 
+		label: x += (y + z); /* label has function scope */ 
+		if (x > 1) 
+			goto label; 
+	} 
+	int func2(int a, int b, int c) 
+	{ 
+		if (a > 1) 
+			goto label; /* illegal jump to undefined label */ 
+	} 
+
+Data Types – 
+Data Type is used to define the type of value to be used in a Program. Based on the type of value specified in the program specified amount of required Bytes will be allocated to the variables used in the program. Data types are broadly classified into three main types. They are as follows.
+Primary data type ( Fundamental Data Types)
+Derived data type
+User defined data type.
+Primary Data Type
+Integers are represented as int, character are represented as char, floating point value are represented as float, double precision floating point are represented as double and finally void are primary data types. Primary data type offers extended data types. Long int, long double are extended data types.
+Integer Data Type
+Integer data type can store only the whole numbers.
+Name
+C Representation
+Size
+(bytes)
+Range
+Format Delimiter
+
+Integer
+Int
+2
+-32768 to 32767
+%d
+
+Short Integer
+short int / short
+2
+-32768 to 32767
+%d
+
+Long Integer
+long int / long
+4
+-2147483648
+to 2147483647
+%ld
+
+Signed Integer
+signed int
+2
+-32768 to 32767
+%u
+
+Unsigned Integer
+unsigned int
+2
+0 to 65535
+%d
+
+Signed Short Integer
+signed short int / short
+2
+-32768 to 32767
+%d
+
+Unsigned Short Integer
+unsigned short int / short
+2
+0 to 65535
+%u
+
+Signed Long Integer
+signed long int / long
+4
+-2147483648
+to 2147483647
+%ld
+
+Unsigned Long Integer
+unsigned long int / long
+4
+0 to 4294967295
+%lu
+
+
+Floating Point Data Type
+Floating Point data types are also known as Real Numbers. It can store only the real numbers (decimal numbers) with 6 digits precision.
+
+Name
+C Representation
+Size
+(bytes)
+Range
+Format Delimiter
+
+Float
+float
+4
+3.4 e-38 to 3.4 e+38 
+%f
+
+Double
+double
+8
+1.7e-308 to 1.7e+308 
+%f
+
+Long Double
+long double
+10
+3.4 e-4932 to 3.4 e+4932 
+%lf
+
+
+Character Data Type
+Normally a single character is defined as char data type. It is specified by the keyword char. Char data type uses 8 bits for storage. Char may be signed char or unsigned char. 
+Name
+C Representation
+Size(bytes)
+Range
+Format Delimiter
+
+Character
+char
+1
+-128 to 127
+%c
+
+Signed Character
+signed char
+1
+-128 to 127 
+%c
+
+Unsigned Character
+unsigned char
+1
+0 to 255 
+%c
+
+
+Empty Data Type
+void is the empty data type. This data type is used before main function in a C Language. The word void refers no return data type. It is used before the main function to specify the type of function. If a function is of type void it does not return any value to the calling function.
+Derived Data Types – 
+These data types derived from the basic data types. Derived data types available in C are:
+Array Type.  Ex: char[], int[]….
+Pointer Type.  Ex: char*, int*, etc
+Function Type.  Ex: int(int,int), float(int), etc
+User Defined Data Types –
+The C language provides flexibility to the user to create new data types. These newly created data types are called User Defined Data Types. In C these can be created as:
+Structures.
+Unions
+Enumeration.
+Type qualifiers and Type Modifiers – 
+The declaration statement can optionally have type qualifiers or type modifiers or both.
+Type qualifiers – 
+C – type qualifiers: The keywords which are used to modify the properties of a variable are called type qualifiers.
+TYPES OF C TYPE QUALIFIERS:
+There are two types of qualifiers available in C language. They are,
+const
+volatile
+
+Type Modifiers -
+A type modifier alter the meaning of the base data type to yield a new type. There are four types of modifiers in C they are
+signed
+unsigned
+short
+long
+Storage Classes – 
+In C language, each variable has a storage class which decides scope, visibility and lifetime of that variable. The following storage classes are most oftenly used in C programming.
+
+1. Automatic variables
+2. External variables
+3. Static variables
+4. Register variables
+
+Automatic variables A variable declared inside a function without any storage class specification, is by default an automatic variable. They are created when a function is called and are destroyed automatically when the function exits. Automatic variables can also be called local variables because they are local to a function. By default they are assigned garbage value by the compiler.
+
+
+main()
+{
+int detail;
+//or
+auto int detail; //Both are same
+}
+
+External variables A variable that is declared outside any function is a Global variable. Global variables remain available throughout the entire program. One important thing to remember about global variable is that their values can be changed by any function in the program.
+int number;
+main()
+{
+number=10;
+}
+fun1()
+{
+number=20;
+}
+fun2()
+{
+number=30;
+}
+
+Here the global variable number is available to all three functions. extern keyword The extern keyword is used before a variable toinform the compiler that this variable is declared somewhere else.The extern declaration does not allocate storage for variables.
+
+main()
+{
+extern int x; //Tells compiler that it is defined
+somewhere else
+x = 10;
+printf("%d",x);
+}
+int x; //Global variable x
+
+Static variables A static variable tells the compiler to persist the variable until the end of program. Instead of creating and destroying a variable every time when it comes into and goes out of scope, static is initialized only once and remains into existence till the end of program. A static variable can either be internal or external depending upon the place of declaration. Scope of internal static variable remains inside the function in which it is defined. External static variables remain restricted to scope of file in each they are declared. They are assigned 0 (zero) as default value by the compiler.
+
+#include<stdio.h>
+void test(); //Function declaration
+int main()
+{
+test();
+test();
+test();
+return 0;
+}
+void test()
+{
+static int a = 0; //Static variable
+a = a+1;
+printf("%d\t",a);
+}
+Output:
+1	 2 	3
+
+Register variables Register variable inform the compiler to store the variable in register instead of memory. Register variable has faster access than normal variable. Frequently used variables are kept in register. Only few variables can be placed inside register.
+NOTE : We can never get the address of such variables.
+Syntax :
+register int number;
+
+
+Reading and Writing Characters
+In C language many programs processing character data as text input and text output like a stream of characters. A text stream is a sequence of characters divided into lines; each line consists of zero or more characters followed by a newline character. In C language the standard input and output library provides functions for reading and writing characters at a time.
+
+_ getchar(): Reading next character from keyboard
+_ putchar(): Writing a character each time it is called.
+
+getchar() and putchar() are similar to scanf and printf respectively.
+
+   </pre>
+</body>
+</html>
