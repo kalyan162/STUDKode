@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java notes</title>
+</head>
+<style>
+    body{
+        background-color: antiquewhite;
+        color: black;
+        font-size: larger;
+        font-weight: 700;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    pre{
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <h1 style="text-align: center;">JAVA</h1>
+    <pre>
+    #include stdio.h>
+
+void manipulateArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        arr[i] += i;
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    manipulateArray(arr, 5);
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+<h2>Options:</h2>
+1 2 3 4 5
+1 3 5 7 9(ans)
+1 2 4 7 11
+1 3 6 10 15
+    </pre>
+   <pre>
+   #include <stdio.h>
+
+void trickyLoop(int n) {
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", i * i);
+        i += 2;
+    }
+}
+
+int main() {
+    trickyLoop(5);
+    printf("\n");
+    return 0;
+}
+
+<h2>Options:</h2>
+1 4 9 16
+1 4 9 16 25(ans)
+1 4 9 16 25 36
+1 9 25
+    </pre>
+       <pre>
+ #include stdio.h>
+
+void trickyPointer(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", *arr++);
+    }
+}
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    trickyPointer(arr, 5);
+    printf("\n");
+    return 0;
+}
+
+<h2>Options:</h2>
+10 20 30 40 50(ans)
+10 21 32 43 54
+10 23 36 49 62
+10 25 40 55 70
+    </pre>
+
+             <pre>
+#include <stdio.h>
+
+void trickyBitwise(int a, int b) {
+    printf("a & b: %d\n", a & b);
+    printf("a | b: %d\n", a | b);
+    printf("a ^ b: %d\n", a ^ b);
+}
+
+int main() {
+    trickyBitwise(5, 3);
+    return 0;
+}
+
+<h2>Options:</h2>
+a & b: 1, a | b: 7, a ^ b: 6(ans)
+a & b: 3, a | b: 5, a ^ b: 2
+a & b: 0, a | b: 5, a ^ b: 8
+a & b: 5, a | b: 3, a ^ b: 1
+    </pre>
+          <pre>
+#include <stdio.h>
+
+void trickyArray(int arr[], int n) {
+    int *ptr = arr;
+    for (int i = 0; i < n; i++) {
+        printf("%d ", *(ptr + i));
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    trickyArray(arr, 5);
+    printf("\n");
+    return 0;
+}
+      
+<h2>Options:</h2>
+1 2 3 4 5(ans)
+1 3 5 7 9
+1 4 9 16 25
+1 3 6 10 15
+    </pre>
+<pre>
+  #include <stdio.h>
+
+void trickyString(char str[]) {
+    int i = 0;
+    while (str[i]) {
+        if (str[i] >= 'a' && str[i] <= 'z')
+            str[i] = 'A' + (str[i] - 'a');
+        else if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] = 'a' + (str[i] - 'A');
+        i++;
+    }
+}
+
+int main() {
+    char str[] = "Hello World!";
+    trickyString(str);
+    printf("%s\n", str);
+    return 0;
+}
+<h2>Options:</h2>
+hELLO wORLD!(ans)
+HELLO WORLD!
+HeLLo WoRLD!
+hElLo WoRlD!
+          
+</pre>
+     <pre>
+       #include <stdio.h>
+
+int trickyLoop() {
+    int x = 0;
+    for (int i = 0; i < 5; i++) {
+        x += (i % 2 == 0) ? i : -i;
+    }
+    return x;
+}
+
+int main() {
+    int result = trickyLoop();
+    printf("Result: %d\n", result);
+    return 0;
+}
+
+<h2>Options:</h2>
+Result: 5
+Result: -3
+Result: 0
+Result: 2(ans)
+     </pre> 
+</body>
+</html>
