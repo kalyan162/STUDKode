@@ -1,8 +1,7 @@
  const quizData = 
  [
   {
-    question: "Which of the following declaration is not supported by C language?
-",
+    question: "Which of the following declaration is not supported by C language?",
     options: [
      "String str;",
      "char *str;",
