@@ -3,7 +3,7 @@
   {
     question: "Which of the following declaration is not supported by C language?",
     options: [
-     "String str;",
+     "string str;",
      "char *str;",
       "float str = 3e2;",
       "Both String str; and float str = 3e2;"
